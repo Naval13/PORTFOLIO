@@ -1,3 +1,4 @@
+
 :root {
     --swiper-navigation-size: 44px;
 }
@@ -81,29 +82,18 @@ html {
     box-sizing: border-box;
     height: 100%;
     touch-action: manipulation;
+    scroll-behavior: smooth;
 }
 :host, html {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    font-family: var(--font-neue-haas), var(--font-geist-sans), system-ui, sans-serif;
-    font-feature-settings: normal;
-    font-variation-settings: normal;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    -webkit-tap-highlight-color: transparent;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: var(--font-neue-haas), var(--font-geist-sans), system-ui, sans-serif;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
 }
-:host, html {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    font-family: var(--font-neue-haas), var(--font-geist-sans), system-ui, sans-serif;
-    font-feature-settings: normal;
-    font-variation-settings: normal;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    -webkit-tap-highlight-color: transparent;
-}
+
 *, :after, :before {
     box-sizing: inherit;
 }
@@ -220,9 +210,7 @@ html {
     border: 0 solid #e5e7eb;
     box-sizing: border-box;
 }
-html[Attributes Style] {
-    -webkit-locale: "en";
-}
+
 user agent stylesheet
 :root {
     view-transition-name: root;
@@ -558,4 +546,135 @@ html {
     --tw-backdrop-opacity: ;
     --tw-backdrop-saturate: ;
     --tw-backdrop-sepia: ;
+}
+html {
+  scroll-behavior: smooth;
+    font-family: "Sora", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", sans-serif;
+  }
+  
+/* Offset scroll position for fixed header if any */
+#projects, #contact {
+  scroll-margin-top: 100px;
+}
+
+.crisp-client .cc-1brb6 {
+  z-index: 1000000;
+}
+.crisp-client *:focus-visible {
+  outline-color: #5B5B5B !important;
+}
+
+.crisp-client .cc-1brb6 .cc-co79q {
+color: #FFFFFF !important;
+}
+
+.crisp-client .cc-1brb6 .cc-1dvce {
+color: #2A2A2A !important;
+}
+
+.crisp-client .cc-1brb6 .cc-5t1tm {
+background-color: #FFFFFF !important;
+}
+
+.crisp-client .cc-1brb6 .cc-1q2sq {
+background-color: #5B5B5B !important;
+}
+
+.crisp-client .cc-1brb6 .cc-62iw4 {
+background-color: #313131 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-1kgzy {
+background-color: #2A2A2A !important;
+}
+
+.crisp-client .cc-1brb6 .cc-1kgzy *:focus-visible {
+outline-color: #F0F2F5 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-m59gn {
+background-color: #F2F2F2 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-jtuj4 {
+background-color: #F0F2F5 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-1ikmr {
+border-color: #FFFFFF !important;
+}
+
+.crisp-client .cc-1brb6 .cc-1i61z,
+.crisp-client .cc-1brb6 .cc-134r8:hover {
+border-color: #2A2A2A !important;
+}
+
+.crisp-client .cc-1brb6 .cc-un6tk {
+border-color: rgba(42, 42, 42, 0.2) !important;
+}
+
+.crisp-client .cc-1brb6 .cc-weiiy {
+border-bottom-color: #2A2A2A !important;
+}
+
+.crisp-client .cc-1brb6 .cc-18tkz::placeholder {
+color: #92A9C1 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-10xgc::placeholder {
+color: #92A9C1 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-y2afy,
+.crisp-client .cc-1brb6 .cc-y2afy:active,
+.crisp-client .cc-1brb6 .cc-1swm7:hover .cc-17cww,
+.crisp-client .cc-1brb6 .cc-1swm7 .cc-17cww:active {
+background: #5B5B5B !important;
+}
+
+.crisp-client .cc-1brb6 .cc-coh7k,
+.crisp-client .cc-1brb6 .cc-1cx9a:hover,
+.crisp-client .cc-1brb6 .cc-1xhex[data-active="true"] .cc-ydjl9 {
+background: #454545 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-y2afy:hover,
+.crisp-client .cc-1brb6 .cc-coh7k:hover,
+.crisp-client .cc-1brb6 .cc-1cx9a:active {
+background: #525252 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-coh7k:active {
+background: #5B5B5B !important;
+}
+
+.crisp-client .cc-1brb6 .cc-aoc5z:hover .cc-fajgc {
+background: #454545 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-aoc5z .cc-fajgc:active {
+background: #525252 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-f5i1a,
+.crisp-client .cc-1brb6 .cc-70ynx:hover .cc-iuh54,
+.crisp-client .cc-1brb6 .cc-70ynx .cc-iuh54:active {
+background: #2A2A2A !important;
+}
+
+.crisp-client .cc-1brb6 .cc-f5i1a:hover {
+background: #313131 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-f5i1a:active {
+background: #454545 !important;
+}
+
+.crisp-client .cc-1brb6 .cc-vibqn::selection,
+.crisp-client .cc-1brb6 .cc-vibqn *::selection {
+color: #1c293b !important;
+background-color: #E9E9E9 !important;
 }

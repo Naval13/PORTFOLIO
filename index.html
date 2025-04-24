@@ -3,7 +3,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Naval Aggarwal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Sora:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
+  
 </head>
   
 <body class="bg-neutral-950 text-neutral-200 antialiased min-h-screen flex flex-col font-geist" style="">
@@ -18,7 +22,7 @@
                 <div class="flex-1 overflow-hidden">
                   
               
-              <div class="flex-1 relative h-full overflow-hidden editor-ui" style="background-image: url(&quot;/bg-subtle-dots.svg&quot;);">
+              <div class="flex-1 relative h-full overflow-hidden editor-ui" style="background-color: #f8f8f8;">
                 <div class="h-full flex items-center justify-center bg-transparent editor-ui">
                   <div class="h-full w-full flex items-center justify-center bg-transparent relative">
                     <div class="w-full h-full overflow-hidden ">
@@ -26,7 +30,7 @@
                         <div class="page_resetContainer__ab3hR h-full">
                           <div class="page_pageContainer__1GDpE h-full flex flex-col">
                             <div id="tailwind-container" class="w-full h-full !relative flex-1">
-                              <iframe data-color-scheme="light" data-sections-mounted="true" data-project-id="8091dd1b-ff2a-440c-9690-cd26723003f2" data-mount-time="1745310543810" srcdoc="
+                              <iframe title="Embedded Project Preview" data-color-scheme="light" data-sections-mounted="true" data-project-id="8091dd1b-ff2a-440c-9690-cd26723003f2" data-mount-time="1745310543810" srcdoc="
                           <!DOCTYPE html>
                           <html lang=&quot;en&quot; class=&quot;scroll-smooth&quot;>
                              <head>
@@ -197,82 +201,9 @@
 
                                 <link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;{{settings.favicon}}&quot;>
 
-                                <style>
-                                  h1, h2, h3, h4, h5, h6 {
-                                    font-family: {{settings.fonts.primary}}, Inter, system-ui, sans-serif;
-                                  }
-                                  body {
-                                    font-family: {{settings.fonts.secondary}}, Inter, system-ui, sans-serif;
-                                  }
-                                </style>
+                                
 
-                          <style>
-                          /* Direct font imports */
-                          @import url('https://fonts.googleapis.com/css2?family=Inter&amp;display=swap');
-                          @import url('https://fonts.googleapis.com/css2?family=Sora&amp;display=swap');
-
-                          /* Force fonts to apply properly */
-                          body, h1, h2, h3, h4, h5, h6, p, div {
-                            font-display: swap;
-                          }
-
-                          h1, h2, h3, h4, h5, h6 {
-                            font-family: &quot;Inter&quot;, sans-serif !important;
-                          }
-
-                          body, div, p {
-                            font-family: &quot;Sora&quot;, sans-serif !important;
-                          }
-                          </style>
-                          <link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap&quot;>
-                          <link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;display=swap&quot;>
-                          <script>
-                                  // Function to check and log font loading status
-                                  function checkFontLoading() {
-                                    const fonts = [
-                                      &quot;Inter&quot;,
-                                      &quot;Sora&quot;
-                                    ].filter(Boolean);
-
-                                    console.log(&quot;🔍 Checking font loading status...&quot;);
-
-                                    // Use document.fonts API for checking
-                                    if (document.fonts &amp;&amp; document.fonts.check) {
-                                      fonts.forEach(fontName => {
-                                        const isLoaded = document.fonts.check(&quot;16px &quot; + fontName);
-                                        console.log(`Font &quot;${fontName}&quot;: ${isLoaded ? &quot;✅ Loaded&quot; : &quot;❌ Not loaded&quot;}`);
-
-                                        // If not loaded, try to force it
-                                        if (!isLoaded) {
-                                          console.log(`⚠️ Attempting to force load font: ${fontName}`);
-                                          const forceFontStyle = document.createElement('style');
-                                          forceFontStyle.textContent = `
-                                            @import url('https://fonts.googleapis.com/css2?family=${fontName.replace(/ /g, '+')}&amp;display=swap');
-                                            .${fontName.replace(/ /g, '-')}-force { font-family: &quot;${fontName}&quot;, sans-serif !important; }
-                                          `;
-                                          document.head.appendChild(forceFontStyle);
-
-                                          // Force browser to apply the font
-                                          const forceElement = document.createElement('div');
-                                          forceElement.style.position = 'absolute';
-                                          forceElement.style.opacity = '0';
-                                          forceElement.style.fontFamily = &quot;\&quot;&quot; + fontName + &quot;\&quot;, sans-serif&quot;;
-                                          forceElement.textContent = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789&quot;;
-                                          forceElement.className = fontName.replace(/ /g, '-') + '-force';
-                                          document.body.appendChild(forceElement);
-                                        }
-                                      });
-                                    } else {
-                                      console.log(&quot;⚠️ document.fonts API not available&quot;);
-                                    }
-                                  }
-
-                                  // Check fonts after a short delay
-                                  document.addEventListener('DOMContentLoaded', function() {
-                                    setTimeout(checkFontLoading, 100);
-                                    setTimeout(checkFontLoading, 1000);
-                                  });
-                                  </script>
+                          
                           </head>
                              <body class=&quot;antialiased text-gray-800 min-h-screen flex flex-col&quot;>
                                 <!-- Skip to main content link for accessibility -->
@@ -299,63 +230,6 @@
                                   <!-- Logo -->
                                   <div class=&quot;text-xl font-bold text-black&quot;>
                                     <span class=&quot;hover:text-[#39FF14] transition-colors duration-300&quot;>NAVAL AGGARWAL</span>
-                                  </div>
-
-                                  <!-- Desktop Navigation --- HIDING FOR NOW -->
-                                <!--  <div class=&quot;hidden md:flex space-x-8 items-center&quot;> -->
-
-                                 <!--     <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a> -->
-
-                                 <!--     <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a> -->
-
-                                 <!--     <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a> -->
-
-                                  <!--    <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a> -->
-
-                                  <!--    <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a> -->
-
-                                   <!--   <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a> -->
-
-                                   <!--   <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a> -->
-
-                                   <!--   <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a> -->
-
-                                   <!--   <a href=&quot;{{this.link}}&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a> -->
-
-                                <!--  </div> -->
-
-                                 
-
-                                  <!-- Mobile Menu Button -->
-                                  <button id=&quot;mobile-menu-button&quot; class=&quot;md:hidden flex items-center&quot; aria-label=&quot;Toggle menu&quot;>
-                                    <svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;h-6 w-6&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot;>
-                                      <path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M4 6h16M4 12h16M4 18h16&quot; />
-                                    </svg>
-                                  </button>
-                                </div>
-
-                                <!-- Mobile Menu -->
-                                <div id=&quot;mobile-menu&quot; class=&quot;md:hidden hidden pt-4 pb-2&quot;>
-                                  <div class=&quot;flex flex-col space-y-4&quot;>
-
-                                      <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a>
-
-                                      <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a>
-
-                                      <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a>
-
-                                      <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a>
-
-                                      <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a>
-
-                                      <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a>
-
-                                      <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a>
-
-                                      <a href=&quot;&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;></a>
-
-                                      <a href=&quot;{{this.link}}&quot; class=&quot;font-Inter text-black hover:text-[#39FF14] transition-colors duration-300&quot;>{{this.label}}</a>
-                                    {{/each}}
                                   </div>
                                 </div>
                               </nav>
@@ -477,7 +351,7 @@
                               });
 
                               // Wave animation keyframes (added via style tag since we need to use @keyframes)
-                              const style = document.createElement('style');
+                              let style = document.createElement('style');
                               style.textContent = `
                                 @keyframes wave {
                                   0% {
@@ -640,22 +514,24 @@
 
                             <script>
                               // Simple animation for expertise items
-                              document.addEventListener('DOMContentLoaded', function() {
-                                const expertiseItems = document.querySelectorAll('.expertise-item');
+                              document.addEventListener('DOMContentLoaded', function () {
+                                                const expertiseItems = document.querySelectorAll('.expertise-item');
 
-                                expertiseItems.forEach((item, index) => {
-                                  setTimeout(() => {
-                                    item.classList.add('opacity-100');
-                                    item.style.transform = 'translateY(0)';
-                                  }, 300 + (index * 100));
-                                });
+                                                expertiseItems.forEach((item, index) => {
+                                                  setTimeout(() => {
+                                                    item.classList.add('opacity-100');
+                                                    item.style.transform = 'translateY(0)';
+                                                  }, 300 + index * 100);
+                                                });
 
-                                // Animate the neurons background
-                                createNeuronAnimation();
-                              });
+                                                // Make sure createNeuronAnimation is defined
+                                                if (typeof createNeuronAnimation === 'function') {
+                                                  createNeuronAnimation();
+                                                }
+                                              });
 
                               // CSS for expertise items
-                              const style = document.createElement('style');
+                              let style = document.createElement('style');
                               style.textContent = `
                                 .expertise-item {
                                   opacity: 0;
@@ -677,7 +553,7 @@
                                 if (!neuronsBg) return;
 
                                 // Create canvas for neuron animation
-                                const canvas = document.createElement('canvas');
+                                let canvas = document.createElement('canvas');
                                 canvas.width = neuronsBg.offsetWidth;
                                 canvas.height = neuronsBg.offsetHeight;
                                 canvas.style.width = '100%';
@@ -2646,7 +2522,7 @@
                                 });
 
                                 // Add CSS for custom hide-scrollbar
-                                const style = document.createElement('style');
+                                let style = document.createElement('style');
                                 style.textContent = `
                                   .hide-scrollbar {
                                     scrollbar-width: none; /* Firefox */
@@ -3331,12 +3207,9 @@
     </div>
   </div>
 
-<section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section><script src="/_next/static/chunks/webpack-8de38ddd1dd0362b.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/media/0732a810b815aef2-s.p.otf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/otf\"}]\n2:HL[\"/_next/static/media/213f8bf8bb8f1ebe-s.p.ttf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/ttf\"}]\n3:HL[\"/_next/static/media/3d2f291f05063071-s.p.ttf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/ttf\"}]\n4:HL[\"/_next/static/media/42cbe77eee9e7152-s.p.ttf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/ttf\"}]\n5:HL[\"/_next/static/media/4bcc5dc6a8e35993-s.p.otf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/otf\"}]\n6:HL[\"/_next/static/media/4dfa667a1b8272c1-s.p.otf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/otf\"}]\n7:HL[\"/_next/static/media/610005ab270d602d-s.p.ttf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/ttf\"}]\n8:HL[\"/_next/static/media/66f30814ff6d7cdf.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n9:HL[\"/_next/static/media/a34f9d1faa5f3315-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\na:HL[\"/_next/static/media/b1c18cdb60e524d6-s.p.otf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/otf\"}]\nb:HL[\"/_next/static/media/e11418ac562b8ac1-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\nc:HL[\"/_next/static/css/bd3d2d45255976ef.css\",\"style\"]\nd:HL[\"/_next/static/css/4d196c5750156c0b.css\",\"style\"]\ne:HL[\"/_next/static/css/8149635e31dd140f.css\",\"style\"]\nf:HL[\"/_next/static/css/933e0ba84b9aec21.css\",\"style\"]\n10:HL[\"/_next/static/css/8e0c2cec7e8a4545.css\",\"style\"]\n11:HL[\"/_next/static/css/2f1f5e4620763a13.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"12:I[12846,[],\"\"]\n14:I[19107,[],\"ClientPageRoot\"]\n"])</script><script>self.__next_f.push([1,"15:I[88796,[\"632\",\"static/chunks/commons-f3956634-e0f4ba50e6f2e73d.js\",\"6829\",\"static/chunks/commons-2a9cff62-936a89a9f26f2384.js\",\"563\",\"static/chunks/commons-e482f827-5d686051571b315e.js\",\"5731\",\"static/chunks/commons-5a53a8e3-38fc77ce1bdd0951.js\",\"2543\",\"static/chunks/commons-bc99515f-27ac9641e15fd4fd.js\",\"6438\",\"static/chunks/commons-4371cbc3-d68094a3c05a9485.js\",\"180\",\"static/chunks/commons-e328074a-2b3fb690eb506a6b.js\",\"8997\",\"static/chunks/commons-3257cf71-93cef7e07788625a.js\",\"6286\",\"static/chunks/commons-a228705b-afe16ee925900ded.js\",\"612\",\"static/chunks/commons-a3dad144-d2d11d0410210308.js\",\"110\",\"static/chunks/commons-f88dba18-705c93b554cc0f0d.js\",\"7395\",\"static/chunks/commons-c0d76f48-569284dc3f2071c2.js\",\"6809\",\"static/chunks/commons-ad6a2f20-550a50ebbb5a379c.js\",\"8850\",\"static/chunks/commons-e8f6a492-5cd2cd81db254e9e.js\",\"7435\",\"static/chunks/commons-2c5a8e32-f06221caeca0e6a0.js\",\"9965\",\"static/chunks/commons-dfc0d3ba-f1c10d68faf0863d.js\",\"6812\",\"static/chunks/commons-3812de41-a548d4c2cf58d150.js\",\"6276\",\"static/chunks/commons-ae080475-f5cc8a4db64fbb2f.js\",\"6161\",\"static/chunks/commons-518ca55f-08bb5ed0085c86ae.js\",\"2684\",\"static/chunks/commons-4c6b37ae-c2098baae1dba1c3.js\",\"7800\",\"static/chunks/commons-4305cb47-946d4eebd304f142.js\",\"6592\",\"static/chunks/commons-37a93c5f-4717f735ffef1c8b.js\",\"2634\",\"static/chunks/commons-62e32967-7d369301b4b97af7.js\",\"5377\",\"static/chunks/commons-f33ddaf2-24ea4549df857a59.js\",\"940\",\"static/chunks/commons-9ce36136-50dfd31e47ec8a13.js\",\"4543\",\"static/chunks/commons-9a5e4ce4-dcb3a39d650f8316.js\",\"5007\",\"static/chunks/commons-2898f16f-34d6264006d9646a.js\",\"6851\",\"static/chunks/commons-abda2f14-8315e7148b1ff297.js\",\"754\",\"static/chunks/commons-bd076b32-a0d5f8a109452003.js\",\"5496\",\"static/chunks/commons-bc0ba893-7647cb874a3d9e84.js\",\"5862\",\"static/chunks/commons-b74113ec-2278e4ffdf873bf0.js\",\"8223\",\"static/chunks/commons-02515780-6056fa3b4b9a55e7.js\",\"5312\",\"static/chunks/commons-5d056252-c8cf2a7cc76d1142.js\",\"4880\",\"static/chunks/commons-6879598d-ac2ab4e7c8a62176.js\",\"1634\",\"static/chunks/commons-4507b3f8-e46f0de6483ee086.js\",\"211\",\"static/chunks/commons-af6973b8-258fbed44b599af5.js\",\"2346\",\"static/chunks/commons-454f869a-74d2e2eaf39dc3dc.js\",\"9241\",\"static/chunks/commons-effbbe9c-868b35b8cd51a0b5.js\",\"6862\",\"static/chunks/commons-88bf020e-0bef677f680e510f.js\",\"3280\",\"static/chunks/commons-e8201466-316f08027b7ebd21.js\",\"2674\",\"static/chunks/commons-3ec6e4b0-912712862a6dc8c0.js\",\"2385\",\"static/chunks/commons-017397ff-14329858417aabb9.js\",\"4453\",\"static/chunks/app/auth/callback/page-9801c8cb011f51ae.js\"],\"default\",1]\n"])</script><script>self.__next_f.push([1,"16:I[4707,[],\"\"]\n17:I[36423,[],\"\"]\n"])</script><script>self.__next_f.push([1,"18:I[88003,[\"632\",\"static/chunks/commons-f3956634-e0f4ba50e6f2e73d.js\",\"6829\",\"static/chunks/commons-2a9cff62-936a89a9f26f2384.js\",\"563\",\"static/chunks/commons-e482f827-5d686051571b315e.js\",\"5731\",\"static/chunks/commons-5a53a8e3-38fc77ce1bdd0951.js\",\"2543\",\"static/chunks/commons-bc99515f-27ac9641e15fd4fd.js\",\"6438\",\"static/chunks/commons-4371cbc3-d68094a3c05a9485.js\",\"180\",\"static/chunks/commons-e328074a-2b3fb690eb506a6b.js\",\"8997\",\"static/chunks/commons-3257cf71-93cef7e07788625a.js\",\"6286\",\"static/chunks/commons-a228705b-afe16ee925900ded.js\",\"612\",\"static/chunks/commons-a3dad144-d2d11d0410210308.js\",\"110\",\"static/chunks/commons-f88dba18-705c93b554cc0f0d.js\",\"7395\",\"static/chunks/commons-c0d76f48-569284dc3f2071c2.js\",\"6809\",\"static/chunks/commons-ad6a2f20-550a50ebbb5a379c.js\",\"8850\",\"static/chunks/commons-e8f6a492-5cd2cd81db254e9e.js\",\"7435\",\"static/chunks/commons-2c5a8e32-f06221caeca0e6a0.js\",\"9965\",\"static/chunks/commons-dfc0d3ba-f1c10d68faf0863d.js\",\"6812\",\"static/chunks/commons-3812de41-a548d4c2cf58d150.js\",\"6276\",\"static/chunks/commons-ae080475-f5cc8a4db64fbb2f.js\",\"6161\",\"static/chunks/commons-518ca55f-08bb5ed0085c86ae.js\",\"2684\",\"static/chunks/commons-4c6b37ae-c2098baae1dba1c3.js\",\"7800\",\"static/chunks/commons-4305cb47-946d4eebd304f142.js\",\"6592\",\"static/chunks/commons-37a93c5f-4717f735ffef1c8b.js\",\"2634\",\"static/chunks/commons-62e32967-7d369301b4b97af7.js\",\"5377\",\"static/chunks/commons-f33ddaf2-24ea4549df857a59.js\",\"940\",\"static/chunks/commons-9ce36136-50dfd31e47ec8a13.js\",\"4543\",\"static/chunks/commons-9a5e4ce4-dcb3a39d650f8316.js\",\"5007\",\"static/chunks/commons-2898f16f-34d6264006d9646a.js\",\"6851\",\"static/chunks/commons-abda2f14-8315e7148b1ff297.js\",\"754\",\"static/chunks/commons-bd076b32-a0d5f8a109452003.js\",\"5496\",\"static/chunks/commons-bc0ba893-7647cb874a3d9e84.js\",\"5862\",\"static/chunks/commons-b74113ec-2278e4ffdf873bf0.js\",\"8223\",\"static/chunks/commons-02515780-6056fa3b4b9a55e7.js\",\"5312\",\"static/chunks/commons-5d056252-c8cf2a7cc76d1142.js\",\"4880\",\"static/chunks/commons-6879598d-ac2ab4e7c8a62176.js\",\"1634\",\"static/chunks/commons-4507b3f8-e46f0de6483ee086.js\",\"211\",\"static/chunks/commons-af6973b8-258fbed44b599af5.js\",\"2346\",\"static/chunks/commons-454f869a-74d2e2eaf39dc3dc.js\",\"9241\",\"static/chunks/commons-effbbe9c-868b35b8cd51a0b5.js\",\"6862\",\"static/chunks/commons-88bf020e-0bef677f680e510f.js\",\"3280\",\"static/chunks/commons-e8201466-316f08027b7ebd21.js\",\"2674\",\"static/chunks/commons-3ec6e4b0-912712862a6dc8c0.js\",\"2385\",\"static/chunks/commons-017397ff-14329858417aabb9.js\",\"3146\",\"static/chunks/3146-61f79faa590bfe1d.js\",\"3185\",\"static/chunks/app/layout-530e2aef52e4279e.js\"],\"\"]\n"])</script><script>self.__next_f.push([1,"19:I[49294,[\"632\",\"static/chunks/commons-f3956634-e0f4ba50e6f2e73d.js\",\"6829\",\"static/chunks/commons-2a9cff62-936a89a9f26f2384.js\",\"563\",\"static/chunks/commons-e482f827-5d686051571b315e.js\",\"5731\",\"static/chunks/commons-5a53a8e3-38fc77ce1bdd0951.js\",\"2543\",\"static/chunks/commons-bc99515f-27ac9641e15fd4fd.js\",\"6438\",\"static/chunks/commons-4371cbc3-d68094a3c05a9485.js\",\"180\",\"static/chunks/commons-e328074a-2b3fb690eb506a6b.js\",\"8997\",\"static/chunks/commons-3257cf71-93cef7e07788625a.js\",\"6286\",\"static/chunks/commons-a228705b-afe16ee925900ded.js\",\"612\",\"static/chunks/commons-a3dad144-d2d11d0410210308.js\",\"110\",\"static/chunks/commons-f88dba18-705c93b554cc0f0d.js\",\"7395\",\"static/chunks/commons-c0d76f48-569284dc3f2071c2.js\",\"6809\",\"static/chunks/commons-ad6a2f20-550a50ebbb5a379c.js\",\"8850\",\"static/chunks/commons-e8f6a492-5cd2cd81db254e9e.js\",\"7435\",\"static/chunks/commons-2c5a8e32-f06221caeca0e6a0.js\",\"9965\",\"static/chunks/commons-dfc0d3ba-f1c10d68faf0863d.js\",\"6812\",\"static/chunks/commons-3812de41-a548d4c2cf58d150.js\",\"6276\",\"static/chunks/commons-ae080475-f5cc8a4db64fbb2f.js\",\"6161\",\"static/chunks/commons-518ca55f-08bb5ed0085c86ae.js\",\"2684\",\"static/chunks/commons-4c6b37ae-c2098baae1dba1c3.js\",\"7800\",\"static/chunks/commons-4305cb47-946d4eebd304f142.js\",\"6592\",\"static/chunks/commons-37a93c5f-4717f735ffef1c8b.js\",\"2634\",\"static/chunks/commons-62e32967-7d369301b4b97af7.js\",\"5377\",\"static/chunks/commons-f33ddaf2-24ea4549df857a59.js\",\"940\",\"static/chunks/commons-9ce36136-50dfd31e47ec8a13.js\",\"4543\",\"static/chunks/commons-9a5e4ce4-dcb3a39d650f8316.js\",\"5007\",\"static/chunks/commons-2898f16f-34d6264006d9646a.js\",\"6851\",\"static/chunks/commons-abda2f14-8315e7148b1ff297.js\",\"754\",\"static/chunks/commons-bd076b32-a0d5f8a109452003.js\",\"5496\",\"static/chunks/commons-bc0ba893-7647cb874a3d9e84.js\",\"5862\",\"static/chunks/commons-b74113ec-2278e4ffdf873bf0.js\",\"8223\",\"static/chunks/commons-02515780-6056fa3b4b9a55e7.js\",\"5312\",\"static/chunks/commons-5d056252-c8cf2a7cc76d1142.js\",\"4880\",\"static/chunks/commons-6879598d-ac2ab4e7c8a62176.js\",\"1634\",\"static/chunks/commons-4507b3f8-e46f0de6483ee086.js\",\"211\",\"static/chunks/commons-af6973b8-258fbed44b599af5.js\",\"2346\",\"static/chunks/commons-454f869a-74d2e2eaf39dc3dc.js\",\"9241\",\"static/chunks/commons-effbbe9c-868b35b8cd51a0b5.js\",\"6862\",\"static/chunks/commons-88bf020e-0bef677f680e510f.js\",\"3280\",\"static/chunks/commons-e8201466-316f08027b7ebd21.js\",\"2674\",\"static/chunks/commons-3ec6e4b0-912712862a6dc8c0.js\",\"2385\",\"static/chunks/commons-017397ff-14329858417aabb9.js\",\"3146\",\"static/chunks/3146-61f79faa590bfe1d.js\",\"3185\",\"static/chunks/app/layout-530e2aef52e4279e.js\"],\"Providers\"]\n"])</script><script>self.__next_f.push([1,"1a:I[13490,[\"7601\",\"static/chunks/app/error-5dec84cfc91569bb.js\"],\"default\"]\n"])</script><script>self.__next_f.push([1,"1b:I[93772,[\"632\",\"static/chunks/commons-f3956634-e0f4ba50e6f2e73d.js\",\"6829\",\"static/chunks/commons-2a9cff62-936a89a9f26f2384.js\",\"563\",\"static/chunks/commons-e482f827-5d686051571b315e.js\",\"5731\",\"static/chunks/commons-5a53a8e3-38fc77ce1bdd0951.js\",\"2543\",\"static/chunks/commons-bc99515f-27ac9641e15fd4fd.js\",\"6438\",\"static/chunks/commons-4371cbc3-d68094a3c05a9485.js\",\"180\",\"static/chunks/commons-e328074a-2b3fb690eb506a6b.js\",\"8997\",\"static/chunks/commons-3257cf71-93cef7e07788625a.js\",\"6286\",\"static/chunks/commons-a228705b-afe16ee925900ded.js\",\"612\",\"static/chunks/commons-a3dad144-d2d11d0410210308.js\",\"110\",\"static/chunks/commons-f88dba18-705c93b554cc0f0d.js\",\"7395\",\"static/chunks/commons-c0d76f48-569284dc3f2071c2.js\",\"6809\",\"static/chunks/commons-ad6a2f20-550a50ebbb5a379c.js\",\"8850\",\"static/chunks/commons-e8f6a492-5cd2cd81db254e9e.js\",\"7435\",\"static/chunks/commons-2c5a8e32-f06221caeca0e6a0.js\",\"9965\",\"static/chunks/commons-dfc0d3ba-f1c10d68faf0863d.js\",\"6812\",\"static/chunks/commons-3812de41-a548d4c2cf58d150.js\",\"6276\",\"static/chunks/commons-ae080475-f5cc8a4db64fbb2f.js\",\"6161\",\"static/chunks/commons-518ca55f-08bb5ed0085c86ae.js\",\"2684\",\"static/chunks/commons-4c6b37ae-c2098baae1dba1c3.js\",\"7800\",\"static/chunks/commons-4305cb47-946d4eebd304f142.js\",\"6592\",\"static/chunks/commons-37a93c5f-4717f735ffef1c8b.js\",\"2634\",\"static/chunks/commons-62e32967-7d369301b4b97af7.js\",\"5377\",\"static/chunks/commons-f33ddaf2-24ea4549df857a59.js\",\"940\",\"static/chunks/commons-9ce36136-50dfd31e47ec8a13.js\",\"4543\",\"static/chunks/commons-9a5e4ce4-dcb3a39d650f8316.js\",\"5007\",\"static/chunks/commons-2898f16f-34d6264006d9646a.js\",\"6851\",\"static/chunks/commons-abda2f14-8315e7148b1ff297.js\",\"754\",\"static/chunks/commons-bd076b32-a0d5f8a109452003.js\",\"5496\",\"static/chunks/commons-bc0ba893-7647cb874a3d9e84.js\",\"5862\",\"static/chunks/commons-b74113ec-2278e4ffdf873bf0.js\",\"8223\",\"static/chunks/commons-02515780-6056fa3b4b9a55e7.js\",\"5312\",\"static/chunks/commons-5d056252-c8cf2a7cc76d1142.js\",\"4880\",\"static/chunks/commons-6879598d-ac2ab4e7c8a62176.js\",\"1634\",\"static/chunks/commons-4507b3f8-e46f0de6483ee086.js\",\"211\",\"static/chunks/commons-af6973b8-258fbed44b599af5.js\",\"2346\",\"static/chunks/commons-454f869a-74d2e2eaf39dc3dc.js\",\"9241\",\"static/chunks/commons-effbbe9c-868b35b8cd51a0b5.js\",\"6862\",\"static/chunks/commons-88bf020e-0bef677f680e510f.js\",\"3280\",\"static/chunks/commons-e8201466-316f08027b7ebd21.js\",\"2674\",\"static/chunks/commons-3ec6e4b0-912712862a6dc8c0.js\",\"2385\",\"static/chunks/commons-017397ff-14329858417aabb9.js\",\"3146\",\"static/chunks/3146-61f79faa590bfe1d.js\",\"3185\",\"static/chunks/app/layout-530e2aef52e4279e.js\"],\"Toaster\"]\n"])</script><script>self.__next_f.push([1,"1d:I[61060,[],\"\"]\n1e:[]\n"])</script><script>self.__next_f.push([1,"0:[\"$\",\"$L12\",null,{\"buildId\":\"nt6m7wr3inYrL_ganNGkE\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"auth\",\"callback\"],\"initialTree\":[\"\",{\"children\":[\"auth\",{\"children\":[\"callback\",{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"auth\",{\"children\":[\"callback\",{\"children\":[\"__PAGE__\",{},[[\"$L13\",[\"$\",\"$L14\",null,{\"props\":{\"params\":{},\"searchParams\":{}},\"Component\":\"$15\"}],null],null],null]},[null,[\"$\",\"$L16\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"auth\",\"children\",\"callback\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L17\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[null,[\"$\",\"$L16\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"auth\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L17\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/bd3d2d45255976ef.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/4d196c5750156c0b.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"2\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8149635e31dd140f.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"3\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/933e0ba84b9aec21.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"4\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8e0c2cec7e8a4545.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"5\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/2f1f5e4620763a13.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"__variable_7e2c79 __variable_3a0388 __variable_c1e5c9 dark\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"rel\":\"canonical\",\"href\":\"https://rollout.site/\"}],[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/svg+xml\"}],[\"$\",\"meta\",null,{\"name\":\"twitter:image\",\"content\":\"https://rollout.site/ogimagerollout.png\"}],[\"$\",\"meta\",null,{\"name\":\"google-site-verification\",\"content\":\"zCl_bd3BxoFUhwxQRD3DMcvCgLdXCeCXAd33QPZGPdU\"}],[\"$\",\"link\",null,{\"rel\":\"stylesheet\",\"href\":\"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css\"}],[\"$\",\"$L18\",null,{\"strategy\":\"afterInteractive\",\"src\":\"https://www.googletagmanager.com/gtag/js?id=G-EJF6E1MZVH\"}],[\"$\",\"$L18\",null,{\"id\":\"google-analytics\",\"strategy\":\"afterInteractive\",\"children\":\"\\n            window.dataLayer = window.dataLayer || [];\\n            function gtag(){dataLayer.push(arguments);}\\n            gtag('js', new Date());\\n            gtag('config', 'G-EJF6E1MZVH');\\n          \"}],[\"$\",\"$L18\",null,{\"src\":\"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js\",\"strategy\":\"beforeInteractive\"}],[\"$\",\"$L18\",null,{\"id\":\"swiper-init\",\"strategy\":\"afterInteractive\",\"children\":\"\\n            document.addEventListener('DOMContentLoaded', function() {\\n              if (typeof Swiper !== 'undefined') {\\n                var swipers = document.querySelectorAll('.swiper');\\n                swipers.forEach(function(swiperEl) {\\n                  var options = JSON.parse(swiperEl.getAttribute('data-swiper-options') || '{}');\\n                  new Swiper(swiperEl, {\\n                    loop: true,\\n                    autoplay: {\\n                      delay: 5000,\\n                      disableOnInteraction: false,\\n                    },\\n                    effect: 'fade',\\n                    fadeEffect: {\\n                      crossFade: true\\n                    },\\n                    ...options\\n                  });\\n                });\\n              }\\n            });\\n          \"}]]}],[\"$\",\"body\",null,{\"className\":\"bg-neutral-950 text-neutral-200 antialiased min-h-screen flex flex-col font-geist\",\"children\":[[\"$\",\"$L19\",null,{\"children\":[\"$\",\"$L16\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$1a\",\"errorStyles\":[],\"errorScripts\":[],\"template\":[\"$\",\"$L17\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}],[\"$\",\"$L1b\",null,{\"theme\":\"dark\",\"closeButton\":true,\"position\":\"bottom-left\",\"style\":{\"fontSize\":\"16px\"}}]]}]]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$L1c\"],\"globalErrorComponent\":\"$1d\",\"missingSlots\":\"$W1e\"}]\n"])</script><script>self.__next_f.push([1,"1c:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Rollout AI - AI Landing Page Builder \u0026 Website Builder [FREE]\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Discover Rollout, the ultimate AI landing page generator, and website builder. Create stunning, high-performing websites with ease using AI technology.\"}],[\"$\",\"meta\",\"4\",{\"property\":\"og:title\",\"content\":\"Rollout AI - AI Landing Page Builder \u0026 Website Builder [FREE]\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:description\",\"content\":\"Discover Rollout, the ultimate AI landing page generator, and website builder. Create stunning, high-performing websites with ease using AI technology\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:url\",\"content\":\"https://rollout.site\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:site_name\",\"content\":\"Rollout\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:locale\",\"content\":\"en_US\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:image\",\"content\":\"https://rollout.site/ogimagerollout.png\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:image:alt\",\"content\":\"Rollout AI - AI Landing Page Builder \u0026 Website Builder [FREE]\"}],[\"$\",\"meta\",\"13\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"14\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:site\",\"content\":\"@rolloutai\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:creator\",\"content\":\"@rolloutai\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:title\",\"content\":\"Rollout AI - AI Landing Page Builder \u0026 Website Builder [FREE]\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:description\",\"content\":\"Create Stunning Websites in Minutes with AI\"}],[\"$\",\"meta\",\"19\",{\"name\":\"twitter:image\",\"content\":\"https://rollout.site/ogimagerollout.png\"}],[\"$\",\"meta\",\"20\",{\"name\":\"next-size-adjust\"}]]\n13:null\n"])</script><script src="https://www.googletagmanager.com/gtag/js?id=G-EJF6E1MZVH" data-nscript="afterInteractive"></script><script id="google-analytics" data-nscript="afterInteractive">
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}     
-            gtag('js', new Date());
-            gtag('config', 'G-EJF6E1MZVH');
-          </script><script id="swiper-init" data-nscript="afterInteractive">
+<section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section>
+
+  <script id="swiper-init" data-nscript="afterInteractive">
             document.addEventListener('DOMContentLoaded', function() {
               if (typeof Swiper !== 'undefined') {
                 var swipers = document.querySelectorAll('.swiper');
@@ -3359,142 +3232,14 @@
             });
           </script>
           <next-route-announcer style="position: absolute;"></next-route-announcer>
-          <iframe name="__privateStripeController7711" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-8c84a8b6b137b2243d9154e60a20f655.html#__shared_params__[version]=v3&amp;apiKey=pk_live_51PdELWAGOi60VsUrlKPpsZVAo73gMuaclCLwLLcYNJ3BBOnafJzBLJsj7HVfhCvXKgyivuk1H5d35uJi5P8CSEYm0000X8kcXI&amp;stripeJsId=d8049f59-691c-4394-ae1b-c6eaff87732b&amp;firstStripeInstanceCreatedLatency=13&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1745309577728&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=NA&amp;mids[sid]=NA&amp;referrer=https%3A%2F%2Frollout.site%2Fgenerate&amp;controllerId=__privateStripeController7711" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><div aria-live="polite" class="crisp-client">
-            <div class="cc-rukbw">
-              <div class="cc-9yvsj">
-                <style type="text/css">.crisp-client *:focus-visible {
-                    outline-color: #5B5B5B !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-co79q {
-                    color: #FFFFFF !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-1dvce {
-                    color: #2A2A2A !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-5t1tm {
-                    background-color: #FFFFFF !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-1q2sq {
-                    background-color: #5B5B5B !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-62iw4 {
-                    background-color: #313131 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-1kgzy {
-                    background-color: #2A2A2A !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-1kgzy *:focus-visible {
-                    outline-color: #F0F2F5 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-m59gn {
-                    background-color: #F2F2F2 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-jtuj4 {
-                    background-color: #F0F2F5 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-1ikmr {
-                    border-color: #FFFFFF !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-1i61z,
-                  .crisp-client .cc-1brb6 .cc-134r8:hover {
-                    border-color: #2A2A2A !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-un6tk {
-                    border-color: rgba(42, 42, 42, 0.2) !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-weiiy {
-                    border-bottom-color: #2A2A2A !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-18tkz::placeholder {
-                    color: #92A9C1 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-10xgc::placeholder {
-                    color: #92A9C1 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-y2afy,
-                  .crisp-client .cc-1brb6 .cc-y2afy:active,
-                  .crisp-client .cc-1brb6 .cc-1swm7:hover .cc-17cww,
-                  .crisp-client .cc-1brb6 .cc-1swm7 .cc-17cww:active {
-                    background: #5B5B5B !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-coh7k,
-                  .crisp-client .cc-1brb6 .cc-1cx9a:hover,
-                  .crisp-client .cc-1brb6 .cc-1xhex[data-active="true"] .cc-ydjl9 {
-                    background: #454545 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-y2afy:hover,
-                  .crisp-client .cc-1brb6 .cc-coh7k:hover,
-                  .crisp-client .cc-1brb6 .cc-1cx9a:active {
-                    background: #525252 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-coh7k:active {
-                    background: #5B5B5B !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-aoc5z:hover .cc-fajgc {
-                    background: #454545 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-aoc5z .cc-fajgc:active {
-                    background: #525252 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-f5i1a,
-                  .crisp-client .cc-1brb6 .cc-70ynx:hover .cc-iuh54,
-                  .crisp-client .cc-1brb6 .cc-70ynx .cc-iuh54:active {
-                    background: #2A2A2A !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-f5i1a:hover {
-                    background: #313131 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-f5i1a:active {
-                    background: #454545 !important;
-                  }
-
-                  .crisp-client .cc-1brb6 .cc-vibqn::selection,
-                  .crisp-client .cc-1brb6 .cc-vibqn *::selection {
-                    color: #1c293b !important;
-                    background-color: #E9E9E9 !important;
-                  }
-                </style>
-              </div>
-              <div class="cc-k4lmp">
-                <style type="text/css">.crisp-client .cc-1brb6 {
-                    z-index: 1000000;
-                  }
-                </style>
-              </div>
-            </div>
+          <div aria-live="polite" class="crisp-client">
             <div id="crisp-chatbox" lang="en" dir="ltr" translate="no" tabindex="-1" class="cc-1brb6" data-hidden="false" data-force-show="false" data-color-mode="light" data-availability="online" data-lock-maximized="false" data-website-logo="false" data-last-operator-face="false" data-ongoing-operator-face="false" data-availability-tooltip="false" data-hide-vacation="false" data-blocked="true" data-mobile-view="false" data-full-view="true" data-small-view="true" data-large-view="false" data-has-local-messages="false" data-was-availability-online="true" data-is-activity-ongoing="false" data-hide-on-away="false" data-hide-on-mobile="true" data-position-reverse="false">
               <div class="cc-1yy0g cc-1wive cc-vibqn"><a data-maximized="false" data-is-failure="false" class="cc-1m2mf" tabindex="0" role="button" aria-label="Open chat" data-pane-animate-entrance="false" data-pop="minimized:open"><span class="cc-6lwfw"><!--v-if--></span><span class="cc-157aw cc-1kgzy"><span data-id="chat_closed" data-is-ongoing="false" class="cc-d73fc"><span class="cc-1bvfm cc-hshc7"><!--v-if--></span></span></span></a>
               </div>
             </div>
           </div>
-    <iframe name="__privateStripeMetricsController7710" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Frollout.site%2Fgenerate&amp;title=Rollout%20AI%20-%20AI%20Landing%20Page%20Builder%20%26%20Website%20Builder%20%5BFREE%5D&amp;referrer=https%3A%2F%2Faccounts.google.com%2F&amp;muid=NA&amp;sid=NA&amp;version=6&amp;preview=false&amp;__shared_params__[version]=v3" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe>
-    <script src="/js/html2canvas.js" data-nscript="afterInteractive"></script>
-    <script src="/js/dom-to-image.js" data-nscript="afterInteractive"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
