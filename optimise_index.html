@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>NAVAL AGGARWAL — AI & Data Engineer | Portfolio</title>
+  <meta name="description" content="AI & Data Engineer portfolio by Naval Aggarwal: projects, case studies, skills, testimonials and sketches. Transforming data into intelligent products." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://navalaggarwal.com/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="NAVAL AGGARWAL — AI & Data Engineer | Portfolio" />
+  <meta property="og:description" content="Projects, case studies, skills and testimonials across AI, data and engineering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://navalaggarwal.com/" />
+  <meta property="og:image" content="/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NAVAL AGGARWAL — AI & Data Engineer | Portfolio" />
+  <meta name="twitter:description" content="Projects, case studies, skills and testimonials across AI, data and engineering." />
+  <meta name="twitter:image" content="/og-cover.jpg" />
+
+  <!-- Resource hints -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#39FF14" />
+
+  <!-- Apps Script endpoint (your live URL) -->
+  <meta name="sheets-api" content="https://script.google.com/macros/s/AKfycbzlSvA4x1ZAT-HIAsCrI5capKf9QnPV6qR1_QSUgqbug9p9xvkI0nFQbWrN4PBfLsUuVA/exec" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/main.css" />
+
+  <!-- (Optional) Tailwind CDN for utility classes in markup -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- JSON-LD / Person -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Naval Aggarwal",
+    "jobTitle":"AI & Data Engineer",
+    "url":"https://navalaggarwal.com/"
+  }
+  </script>
+</head>
+<body class="min-h-screen bg-white text-black antialiased">
+  <!-- Header -->
+  <header class="header-blur">
+    <nav class="container header-inner">
+      <div class="text-xl font-bold">NAVAL AGGARWAL</div>
+      <div class="hidden sm:flex gap-3">
+        <a class="btn btn-outline" href="#projects">Projects</a>
+        <a class="btn btn-solid" href="#contact">Get in Touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-16">
+    <!-- Hero -->
+    <section id="hero" class="section">
+      <div class="container hero-grid text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-3">NAVAL AGGARWAL</h1>
+        <p class="text-sm md:text-base tracking-widest">AI &amp; DATA ENGINEER&nbsp;|&nbsp;INNOVATOR&nbsp;|&nbsp;TECH STRATEGIST</p>
+        <p class="mt-6 text-xl text-neutral-800">Transforming data into intelligence. Blending AI with business impact.</p>
+        <p class="mt-2 text-lg text-neutral-700">Where intelligent systems meet bold design.</p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#projects" class="btn btn-outline">Projects</a>
+          <a href="#contact" class="btn btn-solid">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 relative">
+          <img class="w-full h-auto rounded-lg object-cover grayscale hover:grayscale-0 transition"
+               src="https://lh3.googleusercontent.com/d/1GVr4dLSc4X18qlhWNPxBs4aa1lf7RFNG" alt="Portrait" loading="lazy" width="200" height="200" />
+          <div aria-hidden="true" class="absolute -inset-3 rounded-lg" style="border:1px solid rgba(57,255,20,.3)"></div>
+        </div>
+        <div class="order-1 md:order-2">
+          <h2 class="text-3xl md:text-4xl font-bold section-kicker">About</h2>
+          <div class="mt-6 space-y-5 text-lg text-neutral-800">
+            <p>With 8+ years across AI engineering, full-stack data science, and strategic product development, I build intelligent systems that blend prediction, automation, and experience design.</p>
+            <p>From deploying LLM agents to decoding market signals — I’m driven by one goal: meaningful, intelligent impact.</p>
+          </div>
+          <div class="mt-8 pt-6 border-t">
+            <h3 class="text-xl font-semibold mb-4">Core Expertise</h3>
+            <ul class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+              <li>AI Engineering</li><li>Data Science</li><li>ML Strategy</li>
+              <li>Cloud Architecture</li><li>Product Development</li><li>Stakeholder Comms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills (Sheets) -->
+    <section id="skills" class="section" style="background:#0b0b0c;color:#fff;">
+      <div class="container text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Skills</h2>
+        <p class="text-neutral-400 mt-2 max-w-2xl mx-auto">Built at the intersection of data, design, and decision-making.</p>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-skills-grid></div>
+      </div>
+    </section>
+
+    <!-- Projects (Sheets) -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-bold">Projects</h2>
+          <p class="text-neutral-600 mt-2 max-w-xl mx-auto">Showcasing intelligent systems that blend prediction, automation, and experience design.</p>
+        </div>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10" data-projects-grid aria-live="polite" aria-busy="true"></div>
+      </div>
+
+      <!-- Modal -->
+      <div id="project-modal" class="modal-wrap" aria-hidden="true">
+        <div class="modal-dim" data-close-modal></div>
+        <div id="project-modal-card" class="modal-card">
+          <button class="modal-close" aria-label="Close" data-close-modal>&times;</button>
+          <div id="project-modal-content">Loading…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies (Sheets) -->
+    <section id="case-studies" class="section" style="background:#fafafa;">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-bold">Case Studies</h2>
+          <p class="text-neutral-600 mt-2 max-w-xl mx-auto">Deep dives into approach, execution, and outcomes.</p>
+        </div>
+        <div class="mt-12 case-grid" data-case-grid></div>
+      </div>
+    </section>
+
+    <!-- Testimonials (Sheets) -->
+    <section id="testimonials" class="section" style="background:#0b0b0c;color:#fff;">
+      <div class="container">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold">Testimonials</h2>
+            <p class="text-neutral-400 mt-2">What partners and clients say.</p>
+          </div>
+          <div class="testi-nav">
+            <button class="testi-btn" type="button" aria-label="Previous" data-testi-prev>‹</button>
+            <button class="testi-btn" type="button" aria-label="Next" data-testi-next>›</button>
+          </div>
+        </div>
+        <div class="testi-wrap mt-8" tabindex="0" aria-label="Testimonials carousel">
+          <div class="testi-strip" data-testimonials-strip></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hobbies" class="py-20 md:py-32 bc-wrap">
+    <!-- corners -->
+    <div class="bc-corner tl" aria-hidden="true"></div>
+    <div class="bc-corner br" aria-hidden="true"></div>
+
+    <div class="container mx-auto px-6">
+        <!-- header -->
+        <div class="bc-head">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Beyond Code</h2>
+        <p class="mt-3 text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto">
+            Creativity powers my code. Sketching, designing, and storytelling help me visualize abstract systems and intuitive experiences.
+        </p>
+        <div class="bc-eyebrow" aria-hidden="true"></div>
+        </div>
+
+        <!-- horizontal scroller populated from Google Sheet -->
+        <div class="relative">
+        <button type="button" class="bc-nav left-0 -translate-x-1/2" aria-label="Scroll left" data-bc-prev>
+            <span class="bc-btn" aria-hidden="true">‹</span>
+        </button>
+        <div class="bc-scroller hide-scrollbar" tabindex="0" aria-label="Beyond Code gallery">
+            <div class="bc-strip" data-beyond-strip>
+            <!-- JS (renderBeyond) injects cards here -->
+            </div>
+        </div>
+        <button type="button" class="bc-nav right-0 translate-x-1/2" aria-label="Scroll right" data-bc-next>
+            <span class="bc-btn" aria-hidden="true">›</span>
+        </button>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="beyond-modal" class="bc-modal" aria-modal="true" aria-hidden="true">
+        <div class="bc-dim" data-close></div>
+        <article class="bc-card-lg">
+        <button class="bc-close" data-close aria-label="Close">&times;</button>
+        <div id="beyond-modal-content" class="p-6 md:p-8">
+            <!-- filled by JS -->
+        </div>
+        </article>
+    </div>
+    </section>
+
+
+    <section id="contact" class="relative overflow-hidden bg-black text-white py-20 md:py-32">
+    <!-- Decorative corners -->
+    <div class="pointer-events-none absolute top-0 right-0 h-48 w-48 opacity-10">
+        <div class="h-full w-full border-l border-t border-[#39FF14]"></div>
+    </div>
+    <div class="pointer-events-none absolute bottom-0 left-0 h-48 w-48 opacity-10">
+        <div class="h-full w-full border-b border-r border-[#39FF14]"></div>
+    </div>
+
+    <div class="container mx-auto px-6">
+        <!-- Header -->
+        <header class="mb-16 text-center">
+        <h2 class="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Contact</h2>
+        <p class="mx-auto max-w-2xl text-xl text-gray-300 md:text-2xl">Ready to build the future together?</p>
+        <div class="mx-auto mt-6 h-1 w-16 bg-[#39FF14]"></div>
+        </header>
+
+        <div class="grid items-start grid-cols-1 gap-12 md:gap-16 lg:grid-cols-2">
+        <!-- Contact form -->
+        <div class="order-2 lg:order-1">
+            <form id="contact-form" class="space-y-8" novalidate>
+            <!-- Honeypot -->
+            <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+            <!-- Status (ARIA live) -->
+            <p id="form-status" class="sr-only" aria-live="polite"></p>
+
+            <div>
+                <label for="name" class="mb-1 block text-sm font-medium text-gray-300">Name</label>
+                <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                inputmode="text"
+                required
+                class="w-full rounded-md border border-neutral-800 bg-neutral-900 p-3 text-white transition-all duration-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#39FF14]"
+                placeholder="Your name" />
+            </div>
+
+            <div>
+                <label for="email" class="mb-1 block text-sm font-medium text-gray-300">Email</label>
+                <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+                class="w-full rounded-md border border-neutral-800 bg-neutral-900 p-3 text-white transition-all duration-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#39FF14]"
+                placeholder="your.email@example.com" />
+            </div>
+
+            <div class="relative">
+                <label for="project_type" class="mb-1 block text-sm font-medium text-gray-300">Project Type</label>
+                <select
+                id="project_type"
+                name="project_type"
+                required
+                class="w-full appearance-none rounded-md border border-neutral-800 bg-neutral-900 p-3 pr-10 text-white transition-all duration-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#39FF14]">
+                <option value="" disabled selected>Select project type</option>
+                <option value="ai-system">AI System Development</option>
+                <option value="data-science">Data Science Consulting</option>
+                <option value="ml-pipeline">ML Pipeline Optimization</option>
+                <option value="other">Other (specify in message)</option>
+                </select>
+                <!-- custom caret -->
+                <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                </span>
+            </div>
+
+            <div>
+                <label for="message" class="mb-1 block text-sm font-medium text-gray-300">Message</label>
+                <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full resize-none rounded-md border border-neutral-800 bg-neutral-900 p-3 text-white transition-all duration-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#39FF14]"
+                placeholder="Tell me about your project or inquiry"></textarea>
+            </div>
+
+            <div>
+                <button
+                type="submit"
+                id="contact-submit"
+                class="group flex w-full items-center justify-center rounded-md bg-white px-6 py-3 font-medium text-black transition-colors duration-300 hover:bg-[#39FF14]">
+                <span class="inline-flex items-center">
+                    Let&apos;s make something intelligent
+                    <svg class="ml-2 h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7M21 12H3"></path>
+                    </svg>
+                </span>
+                </button>
+            </div>
+            </form>
+            <noscript>
+            <p class="mt-4 text-sm text-gray-400">JavaScript is required to submit the form. Please email
+                <a class="underline hover:text-[#39FF14]" href="mailto:datascientist@navalaggarwal.com">datascientist@navalaggarwal.com</a>.
+            </p>
+            </noscript>
+        </div>
+
+        <!-- Info -->
+        <aside class="order-1 lg:order-2">
+            <div class="mb-8">
+            <h3 class="mb-4 text-xl font-medium text-[#39FF14]">Let&apos;s Connect</h3>
+            <p class="mb-6 text-gray-300">I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+
+            <ul class="space-y-4">
+                <li class="flex items-center">
+                <span class="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800">
+                    <svg class="h-5 w-5 text-[#39FF14]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </span>
+                <div>
+                    <p class="text-sm text-gray-400">Email</p>
+                    <a href="mailto:datascientist@navalaggarwal.com" class="transition-colors duration-300 hover:text-[#39FF14]">datascientist@navalaggarwal.com</a>
+                </div>
+                </li>
+                <li class="flex items-center">
+                <span class="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800">
+                    <svg class="h-5 w-5 text-[#39FF14]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </span>
+                <div>
+                    <p class="text-sm text-gray-400">Location</p>
+                    <p>Melbourne, Australia</p>
+                </div>
+                </li>
+            </ul>
+            </div>
+
+            <div>
+            <h3 class="mb-4 text-xl font-medium text-[#39FF14]">Find Me On</h3>
+            <nav class="flex space-x-4" aria-label="Social links">
+                <a href="https://github.com/Naval13/" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-700 text-gray-300 transition-colors duration-300 hover:border-[#39FF14] hover:text-[#39FF14]" aria-label="GitHub">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234C5.662 21.302 4.967 19.16 4.967 19.16c-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604C7.105 17.96 4.303 16.93 4.303 12.333c0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .321.192.694.801.576C20.765 21.8 24.2 17.303 24.2 12c0-6.627-5.373-12-12.2-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/naval-aggarwal/" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-700 text-gray-300 transition-colors duration-300 hover:border-[#39FF14] hover:text-[#39FF14]" aria-label="LinkedIn">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764S5.534 3.204 6.5 3.204c.967 0 1.75.79 1.75 1.764s-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 11.741V19z"/></svg>
+                </a>
+                <a href="https://medium.com/@naval.aggarwal2020/" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-700 text-gray-300 transition-colors duration-300 hover:border-[#39FF14] hover:text-[#39FF14]" aria-label="Medium">
+                <svg class="h-5 w-5" viewBox="0 0 1044 592" fill="currentColor" aria-hidden="true">
+                    <g><path d="M588.67 296.3c0 163.61-131.49 296.3-293.34 296.3S2 459.91 2 296.3 133.49 0 295.33 0s293.34 132.69 293.34 296.3z"/><path d="M838.23 296.3c0 154.96-65.77 280.54-146.89 280.54s-146.89-125.58-146.89-280.54S610.23 15.76 691.35 15.76s146.88 125.59 146.88 280.54z"/><path d="M1041.63 296.3c0 145.21-26.65 262.85-59.52 262.85s-59.52-117.64-59.52-262.85 26.65-262.85 59.52-262.85 59.52 117.64 59.52 262.85z"/></g>
+                </svg>
+                </a>
+            </nav>
+            </div>
+        </aside>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="success-modal" class="fixed inset-0 z-50 hidden items-center justify-center">
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/75 opacity-0 transition-opacity duration-300"></div>
+        <div role="dialog" aria-modal="true" aria-labelledby="success-title"
+            class="relative m-4 w-full max-w-md transform rounded-lg bg-white opacity-0 shadow-xl transition-all duration-300 scale-95 overflow-hidden">
+        <div class="p-6 text-center">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#39FF14]">
+            <svg class="h-8 w-8 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            </div>
+            <h3 id="success-title" class="mb-2 text-xl font-bold text-gray-900">Message Sent!</h3>
+            <p class="mb-6 text-gray-600">Thanks for reaching out. I&apos;ll get back to you shortly.</p>
+            <button id="modal-close-btn" class="rounded bg-black px-6 py-2 text-white transition-colors duration-300 hover:bg-[#39FF14] hover:text-black">
+            Close
+            </button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-neutral-800 pt-12">
+        <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center justify-between md:flex-row">
+            <p class="mb-4 text-sm text-gray-400 md:mb-0">
+            © <span id="year"></span> Naval Aggarwal. All rights reserved.
+            </p>
+            <p class="text-sm text-gray-500">
+            Designed with <span class="text-[#39FF14]">⚡</span> by Naval Aggarwal
+            </p>
+        </div>
+        </div>
+    </footer>
+    </section>
+
+
+
+
+  </main>
+
+  <footer class="py-10 text-center text-neutral-600">
+    © <span id="year"></span> Naval Aggarwal
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/portfolio_google_script.js" defer></script>
+</body>
+</html>
