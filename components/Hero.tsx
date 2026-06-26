@@ -60,7 +60,7 @@ export default function Hero() {
       </svg>
 
       <motion.div
-        className="relative z-10 max-w-6xl mx-auto w-full py-20"
+        className="relative z-10 max-w-4xl mx-auto w-full py-20 text-center flex flex-col items-center"
         initial="hidden"
         animate="show"
         transition={{ staggerChildren: 0.1, delayChildren: 0.1 }}
@@ -68,7 +68,7 @@ export default function Hero() {
         <motion.div
           variants={item}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-wider text-teal mb-5"
+          className="flex items-center justify-center gap-2.5 font-mono text-xs uppercase tracking-wider text-teal mb-5"
         >
           <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
           <span>Available for projects</span>
@@ -79,7 +79,7 @@ export default function Hero() {
         <motion.h1
           variants={item}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="font-display font-bold text-[clamp(2.4rem,5.5vw,5rem)] leading-[1.05] tracking-tight mb-5 max-w-4xl"
+          className="font-display font-bold text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.1] tracking-tight mb-5"
         >
           <span className="block">I turn complex data</span>
           <span className="block gradient-text">into decisions that</span>
@@ -99,7 +99,7 @@ export default function Hero() {
           that want outcomes, not just outputs.
         </motion.p>
 
-        <motion.div variants={item} transition={{ duration: 0.6, ease: "easeOut" }} className="flex gap-3.5 flex-wrap mb-12">
+        <motion.div variants={item} transition={{ duration: 0.6, ease: "easeOut" }} className="flex gap-3.5 flex-wrap justify-center mb-12">
           <a
             href="#work"
             className="px-7 py-3 rounded-input bg-amber text-bg font-display font-semibold text-sm hover:shadow-[0_8px_24px_rgba(240,165,0,0.3)] transition-shadow"
@@ -118,7 +118,7 @@ export default function Hero() {
           <div className="font-mono text-[0.6rem] uppercase tracking-widest text-muted mb-2">
             Experience with
           </div>
-          <div className="flex gap-6 flex-wrap text-sm text-muted">
+          <div className="flex gap-6 flex-wrap justify-center text-sm text-muted">
             {trustBar.map((t) => (
               <span key={t}>{t}</span>
             ))}
