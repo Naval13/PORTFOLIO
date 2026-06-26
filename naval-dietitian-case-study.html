@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dietitian Case Study — Naval Aggarwal</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0D1117;--s1:#161B22;--s2:#1C2128;
+  --am:#F0A500;--tl:#00D4AA;--pu:#7C6AF7;--rd:#E85D75;--gn:#3DD68C;--bl:#00B4D8;
+  --tx:#E6EDF3;--mu:#8B949E;--br:#21262D;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:60px}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
+code,.mono{font-family:'JetBrains Mono',monospace}
+
+/* ─── HEADER ─── */
+.hdr{padding:60px 40px 48px;border-bottom:1px solid var(--br);text-align:center;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(0,212,170,.1) 0%,transparent 65%),radial-gradient(ellipse 40% 40% at 80% 100%,rgba(240,165,0,.06) 0%,transparent 60%);pointer-events:none}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tl);margin-bottom:12px}
+.hdr h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.1;margin-bottom:10px}
+.grad{background:linear-gradient(135deg,#F0A500,#00D4AA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hdr p{color:var(--mu);max-width:600px;margin:0 auto;line-height:1.7;font-size:.9rem}
+
+/* ─── LAYOUT ─── */
+.wrap{max-width:960px;margin:0 auto;padding:0 32px}
+.sec{padding:48px 0;border-bottom:1px solid var(--br)}
+.sec-eye{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tl);margin-bottom:10px}
+.sh{font-size:clamp(1.3rem,2.5vw,1.9rem);font-weight:700;margin-bottom:8px;line-height:1.2}
+.sub{color:var(--mu);line-height:1.7;margin-bottom:28px;max-width:680px;font-size:.88rem}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:680px){.g2,.g3{grid-template-columns:1fr}}
+
+/* cards */
+.card{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:20px}
+
+/* verdict */
+.verdict{border-radius:14px;padding:24px;margin:16px 0}
+.v-teal{background:rgba(0,212,170,.06);border:1px solid rgba(0,212,170,.22)}
+.v-amber{background:rgba(240,165,0,.06);border:1px solid rgba(240,165,0,.22)}
+.v-red{background:rgba(232,93,117,.06);border:1px solid rgba(232,93,117,.2)}
+.v-purple{background:rgba(124,106,247,.06);border:1px solid rgba(124,106,247,.2)}
+.verdict h4{font-size:.9rem;margin-bottom:8px}
+.v-teal h4{color:var(--tl)}.v-amber h4{color:var(--am)}.v-red h4{color:var(--rd)}.v-purple h4{color:var(--pu)}
+.verdict p,.verdict li{font-size:.83rem;color:var(--mu);line-height:1.65}
+.verdict ul{list-style:none;margin-top:6px}
+.verdict ul li{display:flex;gap:8px;padding:4px 0}
+.verdict ul li::before{content:'→';color:var(--tl);flex-shrink:0}
+
+/* metric cards */
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
+@media(max-width:680px){.metric-grid{grid-template-columns:1fr 1fr}}
+.metric{background:var(--s1);border:1px solid var(--br);border-radius:10px;padding:18px;text-align:center}
+.metric-num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;line-height:1;margin-bottom:4px}
+.metric-label{font-size:.75rem;color:var(--tx);font-weight:500;margin-bottom:3px}
+.metric-sub{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--mu)}
+
+/* pill */
+.pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.62rem;padding:2px 9px;border-radius:4px;border:1px solid rgba(0,212,170,.2);background:rgba(0,212,170,.07);color:var(--tl);margin:2px}
+.pill-am{border-color:rgba(240,165,0,.2);background:rgba(240,165,0,.07);color:var(--am)}
+.pill-pu{border-color:rgba(124,106,247,.2);background:rgba(124,106,247,.07);color:var(--pu)}
+.pill-bl{border-color:rgba(0,180,216,.2);background:rgba(0,180,216,.07);color:var(--bl)}
+
+/* table */
+.tbl{width:100%;border-collapse:collapse;font-size:.82rem;margin:16px 0}
+.tbl th{background:var(--s2);color:var(--mu);font-family:'JetBrains Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;padding:10px 14px;text-align:left;border-bottom:1px solid var(--br)}
+.tbl td{padding:11px 14px;color:var(--mu);border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;line-height:1.5}
+.tbl td:first-child{color:var(--tx);font-weight:500}
+.win{color:var(--gn)!important}.mid{color:var(--am)!important}.lose{color:var(--rd)!important}
+
+/* step row */
+.step{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+.step-n{width:32px;height:32px;border-radius:50%;border:1px solid var(--tl);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--tl);flex-shrink:0}
+.step-b h4{font-size:.88rem;color:var(--tx);margin-bottom:3px}
+.step-b p{font-size:.81rem;color:var(--mu);line-height:1.55}
+
+/* ─── PIPELINE FLOW DIAGRAM ─── */
+.pipeline-container{background:var(--s2);border:1px solid var(--br);border-radius:16px;padding:32px 24px;overflow-x:auto;margin:24px 0}
+.pipeline-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--tl);text-transform:uppercase;letter-spacing:.14em;margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.pipeline-label::after{content:'';flex:1;height:1px;background:var(--br)}
+
+/* The actual SVG pipeline */
+.flow-svg{width:100%;min-width:800px;display:block}
+
+/* ─── CASE STUDY CARD (final format) ─── */
+.cs-card{background:var(--s1);border:1px solid var(--br);border-radius:14px;overflow:hidden;margin:24px 0}
+.cs-header{padding:24px 28px;border-bottom:1px solid var(--br);display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cs-title-block h3{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:6px}
+.cs-outcome{color:var(--am);font-size:.82rem;font-weight:500}
+.cs-meta{text-align:right;flex-shrink:0}
+.cs-meta .industry{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--tl);text-transform:uppercase;letter-spacing:.1em}
+.cs-meta .type{font-size:.75rem;color:var(--mu);margin-top:4px}
+.cs-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:600px){.cs-body{grid-template-columns:1fr}}
+.cs-col{padding:24px 28px;border-right:1px solid var(--br)}
+.cs-col:last-child{border-right:none}
+.cs-col h4{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--mu);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.cs-col p,.cs-col li{font-size:.83rem;color:var(--mu);line-height:1.65}
+.cs-col ul{list-style:none}
+.cs-col ul li{display:flex;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.cs-col ul li:last-child{border-bottom:none}
+.cs-col ul li span{color:var(--tl)}
+.cs-footer{padding:20px 28px;border-top:1px solid var(--br);display:flex;flex-wrap:wrap;gap:6px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="eyebrow">New Case Study · Strategic Analysis</div>
+  <h1>The Dietitian Referral <span class="grad">Intelligence System</span></h1>
+  <p>How to measure, frame, position, and present this project on your portfolio — plus a full graphical flow diagram of the solution.</p>
+</div>
+
+<div class="wrap">
+
+<!-- ──────────────────────────────────────────────── -->
+<!-- SECTION 1: IS THIS WORTH HIGHLIGHTING? -->
+<!-- ──────────────────────────────────────────────── -->
+<div class="sec">
+  <div class="sec-eye">Strategic Value Assessment</div>
+  <h2 class="sh">Yes — and it's more powerful than most of your existing projects</h2>
+  <p class="sub">Here's why this project is actually your strongest client-facing story, even though it sounds smaller than "NAB" or "Monash."</p>
+
+  <div class="g2" style="margin-bottom:20px">
+    <div class="verdict v-teal">
+      <h4>✦ Why this project is gold</h4>
+      <ul>
+        <li><strong style="color:var(--tx)">Real client, real problem, real outcome</strong> — not a hackathon, not university, not "self-employed weekend project." Someone paid or trusted you to solve their actual business problem.</li>
+        <li><strong style="color:var(--tx)">Full-stack AI + Data solution</strong> — ETL + AI analysis + Looker Studio = the exact trifecta you sell as services</li>
+        <li><strong style="color:var(--tx)">Speaks directly to agencies & SMBs</strong> — your target client audience can instantly see themselves in this: "I have emails I need to process too"</li>
+        <li><strong style="color:var(--tx)">Tangible business impact</strong> — not abstract ML accuracy; this freed up her time, improved client experience, filled her practice gaps</li>
+        <li><strong style="color:var(--tx)">Showcases your consulting ability</strong> — you understood her business, not just wrote code</li>
+      </ul>
+    </div>
+    <div class="verdict v-amber">
+      <h4>⚡ What makes it different from your other projects</h4>
+      <ul>
+        <li>Every other project is <strong style="color:var(--tx)">for you or a large institution.</strong> This is for a small business owner — the majority of your freelance clients will be small/medium businesses</li>
+        <li>It demonstrates the <strong style="color:var(--tx)">"AI Integration Consulting"</strong> service — which is your most valuable offering</li>
+        <li>It's a complete <strong style="color:var(--tx)">end-to-end workflow</strong> no team, no infrastructure — just Naval solving a real problem alone</li>
+        <li>The problem is <strong style="color:var(--tx)">highly relatable</strong> — every service business struggles with referral tracking and client understanding</li>
+        <li>It has a <strong style="color:var(--tx)">human story</strong> — a healthcare practitioner who now understands her practice better</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="verdict v-purple">
+    <h4>The reframe that makes it powerful</h4>
+    <p>Don't call it "a project for a dietitian." Call it: <strong style="color:var(--tx)">"AI-powered referral intelligence system for a private healthcare practice."</strong> The industry is healthcare. The problem is data chaos. The solution is AI + ETL + BI. That's a story any agency, clinic, or solo professional can see themselves in.</p>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<!-- SECTION 2: HOW TO MEASURE IT -->
+<!-- ──────────────────────────────────────────────── -->
+<div class="sec">
+  <div class="sec-eye">Measuring the Impact</div>
+  <h2 class="sh">The metrics that make this credible</h2>
+  <p class="sub">You need to quantify at least 3–4 of these. Ask your client (the dietitian) if she can confirm any numbers — even rough ones become powerful proof points.</p>
+
+  <div class="metric-grid">
+    <div class="metric">
+      <div class="metric-num" style="color:var(--tl)">~Xhr</div>
+      <div class="metric-label">Hours saved per week</div>
+      <div class="metric-sub">Manual email reading → automated</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num" style="color:var(--am)">100%</div>
+      <div class="metric-label">Referrals captured</div>
+      <div class="metric-sub">Zero missed bookings</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num" style="color:var(--pu)">AI</div>
+      <div class="metric-label">Personalised recs</div>
+      <div class="metric-sub">Per referral automatically</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num" style="color:var(--gn)">Live</div>
+      <div class="metric-label">Looker dashboard</div>
+      <div class="metric-sub">Practice insights always fresh</div>
+    </div>
+  </div>
+
+  <table class="tbl">
+    <thead><tr><th>Metric to ask client</th><th>Why it matters</th><th>How to state it</th></tr></thead>
+    <tbody>
+      <tr><td>Time spent manually reading/sorting referral emails before</td><td>Establishes the "before" baseline</td><td class="win">"Reduced manual email processing from X hrs/week to near-zero"</td></tr>
+      <tr><td>Number of referrals received per month</td><td>Scale of the problem</td><td class="win">"Automated intake pipeline processing X+ referrals/month"</td></tr>
+      <tr><td>Bookings completed from referrals (conversion rate)</td><td>Business outcome, not just tech</td><td class="win">"Referral-to-booking conversion improved by X%"</td></tr>
+      <tr><td>Did she miss any bookings before this system?</td><td>Risk/cost of the old way</td><td class="win">"Eliminated missed referrals — 100% capture rate"</td></tr>
+      <tr><td>How many content ideas or practice gaps identified</td><td>Proves AI layer added value</td><td class="win">"AI surfaced X recurring client themes, directly informing content"</td></tr>
+      <tr><td>Time to set up a new client booking after referral arrives</td><td>Speed improvement</td><td class="win">"Booking prep time cut from X minutes to X minutes"</td></tr>
+    </tbody>
+  </table>
+
+  <div class="verdict v-amber">
+    <h4>Even without exact numbers — frame it this way</h4>
+    <p>If the dietitian can't give you specific numbers, use directional language: <strong style="color:var(--tx)">"Eliminated hours of manual email review weekly," "First time she had a complete view of her referral pipeline," "Identified 3 recurring client need categories that now drive her content strategy."</strong> Specificity of description compensates for lack of specific numbers.</p>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<!-- SECTION 3: ONE PAGE OR SEPARATE? -->
+<!-- ──────────────────────────────────────────────── -->
+<div class="sec">
+  <div class="sec-eye">Website Strategy</div>
+  <h2 class="sh">One page, but with a full modal case study. Here's why.</h2>
+  <p class="sub">You asked: separate page, or highlight in the main project grid? The answer is a specific hybrid that gives you the best of both.</p>
+
+  <div class="g3">
+    <div class="card" style="border-color:rgba(232,93,117,.25)">
+      <div style="color:var(--rd);font-size:.75rem;font-weight:600;margin-bottom:8px">Option A — Separate /case-studies page ✕</div>
+      <p style="font-size:.81rem;color:var(--mu);line-height:1.6">People have to navigate away. Many won't. You lose the narrative flow of the 1-page scroll. SEO benefit is marginal for freelance goals. Feels like a blog, not a brand.</p>
+    </div>
+    <div class="card" style="border-color:rgba(61,214,140,.25)">
+      <div style="color:var(--gn);font-size:.75rem;font-weight:600;margin-bottom:8px">Option B — Card in Work grid + Modal ✓</div>
+      <p style="font-size:.81rem;color:var(--mu);line-height:1.6">Card sits in the filterable project grid. Click → full-screen modal with the complete story, flow diagram, results, tech stack. Keeps 1-page structure. Best conversion.</p>
+    </div>
+    <div class="card" style="border-color:rgba(240,165,0,.25)">
+      <div style="color:var(--am);font-size:.75rem;font-weight:600;margin-bottom:8px">Option C — Featured Case Study section ✓✓</div>
+      <p style="font-size:.81rem;color:var(--mu);line-height:1.6">Add a "Featured Client Work" section above the project grid. This project gets a full-width spotlight card with the flow diagram visible — clients see it before even reaching the project cards.</p>
+    </div>
+  </div>
+
+  <div class="verdict v-teal" style="margin-top:20px">
+    <h4>✦ Recommended: Option C + B combined</h4>
+    <ul>
+      <li><strong style="color:var(--tx)">Above the project grid:</strong> A "Featured Work" section — one wide card with a mini version of the flow diagram, the outcome numbers, and a "Read the full case study" button that opens the modal</li>
+      <li><strong style="color:var(--tx)">Inside the project grid:</strong> Also include a card for it (tagged: AI/ML · ETL · Looker Studio) so it shows up in filtered views</li>
+      <li><strong style="color:var(--tx)">In the Services section:</strong> Reference it as proof: "Like the referral intelligence system I built for a healthcare practice in Melbourne" next to the AI Integration service tile</li>
+      <li><strong style="color:var(--tx)">Result:</strong> Visitors encounter this story 3 times, each time with more depth — builds trust incrementally without being repetitive</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<!-- SECTION 4: SHOULD YOU USE A FLOW DIAGRAM? -->
+<!-- ──────────────────────────────────────────────── -->
+<div class="sec">
+  <div class="sec-eye">Visual Communication</div>
+  <h2 class="sh">Yes — the flow diagram is the single most powerful thing you can show</h2>
+  <p class="sub">Here's why, and here's the complete diagram to use on your site.</p>
+
+  <div class="g2" style="margin-bottom:28px">
+    <div class="verdict v-teal">
+      <h4>Why diagrams build trust faster than text</h4>
+      <ul>
+        <li>Agencies and clients immediately see <strong style="color:var(--tx)">you understood the full system</strong>, not just one part</li>
+        <li>It shows architectural thinking — the most valuable skill for a partner</li>
+        <li>Non-technical clients (like the dietitian herself) can understand and validate it</li>
+        <li>Technical clients (CTOs, lead devs at agencies) can assess your depth immediately</li>
+        <li>It's infinitely more memorable than a bullet list of technologies used</li>
+      </ul>
+    </div>
+    <div class="verdict v-amber">
+      <h4>What the diagram must communicate</h4>
+      <ul>
+        <li><strong style="color:var(--tx)">The problem (left):</strong> Emails arriving, unstructured, overwhelming</li>
+        <li><strong style="color:var(--tx)">The pipeline (middle):</strong> Extract → Transform → AI → Load</li>
+        <li><strong style="color:var(--tx)">The output (right):</strong> Clean data in Google Sheets + insights in Looker</li>
+        <li><strong style="color:var(--tx)">The value (bottom):</strong> What changed for the client — bookings, content, funnel</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- THE FLOW DIAGRAM -->
+  <div class="pipeline-container">
+    <div class="pipeline-label">Referral Intelligence Pipeline — Architecture Diagram</div>
+
+    <svg class="flow-svg" viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" style="font-family:'Inter',sans-serif">
+      <defs>
+        <marker id="arrowT" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#00D4AA" opacity=".7"/>
+        </marker>
+        <marker id="arrowA" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#F0A500" opacity=".7"/>
+        </marker>
+        <marker id="arrowG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#3DD68C" opacity=".7"/>
+        </marker>
+        <filter id="glow2"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#00D4AA" stop-opacity=".4"/>
+          <stop offset="100%" stop-color="#F0A500" stop-opacity=".4"/>
+        </linearGradient>
+      </defs>
+
+      <!-- ── LAYER LABELS (top) ── -->
+      <g font-family="'JetBrains Mono',monospace" font-size="9" fill="#8B949E" text-anchor="middle" letter-spacing="1">
+        <text x="80" y="20">SOURCE</text>
+        <text x="240" y="20">EXTRACT</text>
+        <text x="400" y="20">TRANSFORM + AI</text>
+        <text x="570" y="20">LOAD</text>
+        <text x="740" y="20">VISUALISE</text>
+      </g>
+
+      <!-- ── BACKGROUND LANES ── -->
+      <rect x="10" y="28" width="140" height="310" rx="8" fill="#0D1117" stroke="#21262D" stroke-width="1" opacity=".6"/>
+      <rect x="160" y="28" width="150" height="310" rx="8" fill="#0D1117" stroke="#21262D" stroke-width="1" opacity=".6"/>
+      <rect x="320" y="28" width="170" height="310" rx="8" fill="#0D1117" stroke="#21262D" stroke-width="1" opacity=".6"/>
+      <rect x="500" y="28" width="140" height="310" rx="8" fill="#0D1117" stroke="#21262D" stroke-width="1" opacity=".6"/>
+      <rect x="650" y="28" width="162" height="310" rx="8" fill="#0D1117" stroke="#21262D" stroke-width="1" opacity=".6"/>
+
+      <!-- ── SOURCE NODES ── -->
+      <!-- Gmail icon block -->
+      <rect x="22" y="60" width="116" height="52" rx="8" fill="#161B22" stroke="#E85D75" stroke-width="1.2"/>
+      <text x="80" y="82" text-anchor="middle" font-size="16">📧</text>
+      <text x="80" y="98" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9.5" fill="#E6EDF3">Referral Emails</text>
+      <text x="80" y="110" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" fill="#8B949E">Gmail / Inbox</text>
+
+      <!-- GP / specialist referral -->
+      <rect x="22" y="130" width="116" height="52" rx="8" fill="#161B22" stroke="#E85D75" stroke-width="1.2"/>
+      <text x="80" y="152" text-anchor="middle" font-size="14">🏥</text>
+      <text x="80" y="167" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9.5" fill="#E6EDF3">GP Referrals</text>
+      <text x="80" y="179" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" fill="#8B949E">Unstructured text</text>
+
+      <!-- patient forms -->
+      <rect x="22" y="200" width="116" height="52" rx="8" fill="#161B22" stroke="#E85D75" stroke-width="1.2"/>
+      <text x="80" y="222" text-anchor="middle" font-size="14">📋</text>
+      <text x="80" y="237" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9.5" fill="#E6EDF3">Patient Notes</text>
+      <text x="80" y="249" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" fill="#8B949E">Manual intake forms</text>
+
+      <!-- ── ARROWS SOURCE → EXTRACT ── -->
+      <line x1="138" y1="86" x2="162" y2="120" stroke="#E85D75" stroke-width="1.2" stroke-dasharray="3 4" marker-end="url(#arrowT)" opacity=".6"/>
+      <line x1="138" y1="156" x2="162" y2="156" stroke="#E85D75" stroke-width="1.2" stroke-dasharray="3 4" marker-end="url(#arrowT)" opacity=".6"/>
+      <line x1="138" y1="226" x2="162" y2="190" stroke="#E85D75" stroke-width="1.2" stroke-dasharray="3 4" marker-end="url(#arrowT)" opacity=".6"/>
+
+      <!-- ── EXTRACT NODE ── -->
+      <rect x="168" y="96" width="132" height="120" rx="10" fill="#161B22" stroke="#00D4AA" stroke-width="1.5"/>
+      <text x="234" y="122" text-anchor="middle" font-size="18">⚙️</text>
+      <text x="234" y="141" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#00D4AA" font-weight="600">EXTRACT</text>
+      <text x="234" y="157" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Email parsing</text>
+      <text x="234" y="170" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Gmail API / IMAP</text>
+      <text x="234" y="183" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Regex + rules engine</text>
+      <text x="234" y="196" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Python ETL scripts</text>
+
+      <!-- ── ARROW EXTRACT → TRANSFORM ── -->
+      <line x1="300" y1="156" x2="322" y2="156" stroke="#00D4AA" stroke-width="1.5" marker-end="url(#arrowT)"/>
+
+      <!-- ── TRANSFORM NODE ── -->
+      <rect x="328" y="50" width="152" height="100" rx="10" fill="#161B22" stroke="#7C6AF7" stroke-width="1.5"/>
+      <text x="404" y="74" text-anchor="middle" font-size="16">🔄</text>
+      <text x="404" y="92" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#7C6AF7" font-weight="600">TRANSFORM</text>
+      <text x="404" y="108" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Clean + normalise fields</text>
+      <text x="404" y="121" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Date / name / condition parsing</text>
+      <text x="404" y="134" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Structured row creation</text>
+
+      <!-- ── AI NODE ── -->
+      <rect x="328" y="168" width="152" height="112" rx="10" fill="#161B22" stroke="#F0A500" stroke-width="1.8"/>
+      <circle cx="404" cy="182" r="0" fill="none"/>
+      <text x="404" y="193" text-anchor="middle" font-size="16">🧠</text>
+      <text x="404" y="211" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#F0A500" font-weight="600">AI ANALYSIS</text>
+      <text x="404" y="228" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">OpenAI / LLM text analysis</text>
+      <text x="404" y="241" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Patient need classification</text>
+      <text x="404" y="254" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Personalised recommendations</text>
+      <text x="404" y="267" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Urgency + priority scoring</text>
+
+      <!-- Vertical arrow transform → AI -->
+      <line x1="404" y1="150" x2="404" y2="166" stroke="#7C6AF7" stroke-width="1.2" marker-end="url(#arrowT)"/>
+
+      <!-- ── ARROW TRANSFORM → LOAD ── -->
+      <line x1="480" y1="100" x2="502" y2="156" stroke="#7C6AF7" stroke-width="1.2" marker-end="url(#arrowT)"/>
+      <!-- ARROW AI → LOAD -->
+      <line x1="480" y1="224" x2="502" y2="200" stroke="#F0A500" stroke-width="1.2" marker-end="url(#arrowA)"/>
+
+      <!-- ── LOAD NODE ── -->
+      <rect x="508" y="96" width="122" height="130" rx="10" fill="#161B22" stroke="#3DD68C" stroke-width="1.5"/>
+      <text x="569" y="124" text-anchor="middle" font-size="16">📊</text>
+      <text x="569" y="142" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#3DD68C" font-weight="600">LOAD</text>
+      <text x="569" y="159" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Google Sheets API</text>
+      <text x="569" y="172" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Structured referral rows</text>
+      <text x="569" y="185" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">AI recommendations col</text>
+      <text x="569" y="198" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Auto-timestamp + flags</text>
+      <text x="569" y="211" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Booking-ready format</text>
+
+      <!-- ── ARROW LOAD → VISUALISE ── -->
+      <line x1="630" y1="156" x2="652" y2="156" stroke="#3DD68C" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+      <!-- ── LOOKER STUDIO NODE ── -->
+      <rect x="658" y="50" width="144" height="240" rx="10" fill="#161B22" stroke="#00B4D8" stroke-width="1.5"/>
+      <text x="730" y="78" text-anchor="middle" font-size="16">📈</text>
+      <text x="730" y="96" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#00B4D8" font-weight="600">LOOKER STUDIO</text>
+      <text x="730" y="112" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#8B949E">Live dashboard</text>
+
+      <!-- Dashboard panels -->
+      <rect x="666" y="122" width="128" height="24" rx="4" fill="#1C2128" stroke="#21262D" stroke-width=".8"/>
+      <text x="730" y="138" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" fill="#00D4AA">📬 Referrals by week</text>
+
+      <rect x="666" y="152" width="128" height="24" rx="4" fill="#1C2128" stroke="#21262D" stroke-width=".8"/>
+      <text x="730" y="168" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" fill="#F0A500">🎯 Conversion funnel</text>
+
+      <rect x="666" y="182" width="128" height="24" rx="4" fill="#1C2128" stroke="#21262D" stroke-width=".8"/>
+      <text x="730" y="198" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" fill="#7C6AF7">🧠 Client need themes</text>
+
+      <rect x="666" y="212" width="128" height="24" rx="4" fill="#1C2128" stroke="#21262D" stroke-width=".8"/>
+      <text x="730" y="228" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" fill="#3DD68C">📅 Booking performance</text>
+
+      <rect x="666" y="242" width="128" height="24" rx="4" fill="#1C2128" stroke="#21262D" stroke-width=".8"/>
+      <text x="730" y="258" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" fill="#E85D75">⚡ Practice gaps</text>
+
+      <!-- ── VALUE OUTCOMES (bottom) ── -->
+      <line x1="80" y1="338" x2="80" y2="322" stroke="var(--br)" stroke-width="1"/>
+      <rect x="10" y="298" width="800" height="36" rx="6" fill="#161B22" stroke="#21262D" stroke-width="1"/>
+      <text x="24" y="320" font-family="'JetBrains Mono',monospace" font-size="8" fill="#8B949E" letter-spacing=".5">OUTCOMES →</text>
+      <text x="120" y="320" font-family="'Inter',sans-serif" font-size="8.5" fill="#3DD68C">✓ Zero missed referrals</text>
+      <text x="260" y="320" font-family="'Inter',sans-serif" font-size="8.5" fill="#3DD68C">✓ AI booking recommendations</text>
+      <text x="420" y="320" font-family="'Inter',sans-serif" font-size="8.5" fill="#3DD68C">✓ Practice gap insights</text>
+      <text x="565" y="320" font-family="'Inter',sans-serif" font-size="8.5" fill="#3DD68C">✓ Content strategy from data</text>
+      <text x="710" y="320" font-family="'Inter',sans-serif" font-size="8.5" fill="#3DD68C">✓ Live funnel view</text>
+
+      <!-- Glow on AI node -->
+      <rect x="328" y="168" width="152" height="112" rx="10" fill="none" stroke="#F0A500" stroke-width=".5" opacity=".5" filter="url(#glow2)"/>
+    </svg>
+  </div>
+
+  <div style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--mu);text-align:center;margin-top:8px">
+    // Use this diagram in your case study modal — it communicates more than 500 words of text
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<!-- SECTION 5: HOW TO WRITE THE CASE STUDY -->
+<!-- ──────────────────────────────────────────────── -->
+<div class="sec">
+  <div class="sec-eye">Case Study Format</div>
+  <h2 class="sh">Exact card + modal format for the website</h2>
+  <p class="sub">This is how it should appear in your project grid and inside the case study modal. Copy this structure directly into lib/data.ts.</p>
+
+  <!-- THE CARD (as it appears in the grid) -->
+  <div class="cs-card">
+    <div class="cs-header">
+      <div class="cs-title-block">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+          <span class="pill">ETL Pipeline</span>
+          <span class="pill">AI / LLM</span>
+          <span class="pill-bl pill">Looker Studio</span>
+          <span class="pill-am pill">Google Sheets</span>
+          <span class="pill-pu pill">Healthcare</span>
+        </div>
+        <h3>Dietitian Referral Intelligence System</h3>
+        <div class="cs-outcome">Eliminated manual email review · AI-powered booking recommendations · Full practice visibility</div>
+      </div>
+      <div class="cs-meta">
+        <div class="industry">Healthcare · SMB</div>
+        <div class="type">AI + ETL + BI · End-to-end</div>
+        <div style="margin-top:8px;font-size:.7rem;color:var(--mu)">Private practice · Melbourne</div>
+      </div>
+    </div>
+    <div class="cs-body">
+      <div class="cs-col">
+        <h4>The Problem</h4>
+        <p>A Melbourne dietitian was drowning in referral emails from GPs and specialists. Each email required manual reading, data extraction, and decision-making about booking priority. She had no visibility into her referral pipeline, no way to spot trends in client needs, and no data to inform her content strategy or identify practice gaps. Bookings were being delayed or missed.</p>
+      </div>
+      <div class="cs-col">
+        <h4>The Solution</h4>
+        <ul>
+          <li><span>→</span>Automated ETL pipeline extracting structured data from referral emails</li>
+          <li><span>→</span>AI (LLM) layer analysing referral text for client expectations + personalised recommendations</li>
+          <li><span>→</span>Transformation into clean, booking-ready rows in Google Sheets</li>
+          <li><span>→</span>Live Looker Studio dashboard showing referral volume, conversion funnel, practice gaps, and content themes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cs-footer">
+      <span class="pill">Python</span>
+      <span class="pill">Gmail API</span>
+      <span class="pill-am pill">OpenAI / LLM</span>
+      <span class="pill">Google Sheets API</span>
+      <span class="pill-bl pill">Looker Studio</span>
+      <span class="pill-pu pill">ETL Pipeline</span>
+      <span class="pill">Pandas</span>
+    </div>
+  </div>
+
+  <!-- DATA.TS SNIPPET -->
+  <div style="background:var(--s2);border:1px solid var(--br);border-radius:10px;overflow:hidden;margin-top:20px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--br);background:var(--s1)">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--tl);text-transform:uppercase;letter-spacing:.08em">Add this to lib/data.ts → projects array</span>
+    </div>
+    <pre style="padding:18px;font-size:.75rem;line-height:1.75;overflow-x:auto;color:#E6EDF3;font-family:'JetBrains Mono',monospace;white-space:pre-wrap">{
+  id: <span style="color:#3DD68C">"dietitian-referral-ai"</span>,
+  title: <span style="color:#3DD68C">"Dietitian Referral Intelligence System"</span>,
+  tags: [<span style="color:#3DD68C">"ETL Pipeline"</span>, <span style="color:#3DD68C">"AI / LLM"</span>, <span style="color:#3DD68C">"Looker Studio"</span>, <span style="color:#3DD68C">"Google Sheets"</span>],
+  category: [<span style="color:#3DD68C">"AI/ML"</span>, <span style="color:#3DD68C">"Data Engineering"</span>, <span style="color:#3DD68C">"BI/Analytics"</span>],
+  featured: <span style="color:#F0A500">true</span>, <span style="color:#8B949E">// ← this flag triggers the featured spotlight section</span>
+  industry: <span style="color:#3DD68C">"Healthcare · Private Practice"</span>,
+  outcome: <span style="color:#3DD68C">"Eliminated manual referral review · AI booking recommendations · Live practice dashboard"</span>,
+  emoji: <span style="color:#3DD68C">"🏥"</span>,
+  description: <span style="color:#3DD68C">"Built a complete referral intelligence system for a Melbourne dietitian. Automated ETL pipeline extracts structured data from referral emails via Gmail API, transforms it with Python, then passes text through an LLM (OpenAI) to generate personalised client recommendations and classify referral urgency. Clean, booking-ready data loads automatically into Google Sheets. A live Looker Studio dashboard gives the practitioner full visibility into her referral pipeline, conversion funnel, practice gaps, and content opportunities."</span>,
+  highlights: [
+    <span style="color:#3DD68C">"Eliminated hours of manual email reading — fully automated intake"</span>,
+    <span style="color:#3DD68C">"AI layer generates personalised recommendations per referral"</span>,
+    <span style="color:#3DD68C">"First time practitioner had complete referral pipeline visibility"</span>,
+    <span style="color:#3DD68C">"Looker Studio dashboard reveals practice gaps and content themes"</span>,
+    <span style="color:#3DD68C">"100% referral capture — zero missed bookings"</span>,
+  ],
+  tech: [<span style="color:#3DD68C">"Python"</span>, <span style="color:#3DD68C">"Gmail API"</span>, <span style="color:#3DD68C">"OpenAI"</span>, <span style="color:#3DD68C">"Google Sheets API"</span>, <span style="color:#3DD68C">"Looker Studio"</span>, <span style="color:#3DD68C">"Pandas"</span>, <span style="color:#3DD68C">"ETL"</span>],
+  showDiagram: <span style="color:#F0A500">true</span>, <span style="color:#8B949E">// ← renders the flow diagram in the modal</span>
+},</pre>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<!-- SECTION 6: SERVICES CROSS-REFERENCE -->
+<!-- ──────────────────────────────────────────────── -->
+<div class="sec">
+  <div class="sec-eye">Amplifying Across the Site</div>
+  <h2 class="sh">3 places this project should appear — each with different depth</h2>
+
+  <div class="step"><div class="step-n">1</div><div class="step-b"><h4>Featured Case Study block (above project grid)</h4><p>Full-width card with mini flow diagram visible, headline "Real client. Real system. Real results." — outcome numbers as inline stats. CTA: "Read the full case study →" opens modal. This is the first detailed proof a client encounters.</p></div></div>
+  <div class="step"><div class="step-n">2</div><div class="step-b"><h4>Project grid card (with featured: true badge)</h4><p>Sits in the filterable grid. Tagged as AI/ML + Data Eng + BI/Analytics — appears in 3 of the 4 filter views. Has a subtle "Client Project" or "★ Featured" label to differentiate from personal/academic projects.</p></div></div>
+  <div class="step"><div class="step-n">3</div><div class="step-b"><h4>Services section — "AI Integration Consulting" tile</h4><p>Add a proof line under the service description: <em style="color:var(--mu)">"Like the referral intelligence system I built for a healthcare practice in Melbourne — automated, AI-powered, live on day one."</em> This is social proof at the exact moment a client is deciding whether to hire you for this service.</p></div></div>
+
+  <div class="verdict v-teal" style="margin-top:20px">
+    <h4>One thing to do right now</h4>
+    <p>Message the dietitian and ask: <strong style="color:var(--tx)">"Would you be happy for me to reference this project on my portfolio? I'd keep it anonymised — just 'a Melbourne healthcare practice.'"</strong> Then ask her one question: <strong style="color:var(--tx)">"Roughly how much time per week would you say this has saved you?"</strong> Even a rough answer ("probably 3–4 hours a week") becomes your headline metric and makes the case study 10x more credible.</p>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<div style="text-align:center;padding:40px;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--mu)">
+  <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;margin-bottom:8px">NA<span style="color:var(--am)">.</span></div>
+  Dietitian Case Study · Naval Aggarwal Portfolio Strategy<br>
+  <span style="color:rgba(139,148,158,.35)">// Add featured:true in data.ts → auto-renders spotlight section</span>
+</div>
+
+</body>
+</html>
