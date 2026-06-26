@@ -1,3 +1,9 @@
+export type Metric = {
+  value: string;
+  label: string;
+  sub: string;
+};
+
 export type Project = {
   id: string;
   title: string;
@@ -11,6 +17,7 @@ export type Project = {
   featured?: boolean;
   industry?: string;
   showDiagram?: boolean;
+  metrics?: Metric[];
 };
 
 export const filters = ["All", "AI/ML", "GenAI", "Data Engineering", "BI/Analytics"] as const;
@@ -36,6 +43,14 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "Gmail API", "OpenAI", "Google Sheets API", "Looker Studio", "Pandas", "ETL"],
     showDiagram: true,
+    // Sample placeholder figures — swap with the dietitian's confirmed numbers
+    // once finalised (see naval-deploy-and-assets.md Part 5 for the drop-in pattern).
+    metrics: [
+      { value: "~5", label: "Hours saved / week", sub: "Manual email review → automated" },
+      { value: "100%", label: "Referrals captured", sub: "Zero missed bookings" },
+      { value: "AI", label: "Personalised recs", sub: "Generated per referral" },
+      { value: "Live", label: "Looker dashboard", sub: "Practice insights always fresh" },
+    ],
   },
   {
     id: "stocks-ai",

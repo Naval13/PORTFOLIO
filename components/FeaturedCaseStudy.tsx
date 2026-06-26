@@ -25,7 +25,7 @@ export default function FeaturedCaseStudy() {
         </h2>
 
         <div className="bg-surface border border-border rounded-card p-6 sm:p-8">
-          <div className="flex items-start justify-between gap-4 flex-wrap mb-6">
+          <div className="flex items-start justify-between gap-4 flex-wrap mb-7">
             <div>
               <div className="font-mono text-[0.62rem] uppercase tracking-wider text-teal mb-2">
                 {featuredProject.industry}
@@ -45,7 +45,24 @@ export default function FeaturedCaseStudy() {
             </div>
           </div>
 
-          <div className="mb-6">
+          {featuredProject.metrics && (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-7 stagger">
+              {featuredProject.metrics.map((m) => (
+                <div key={m.label} className="bg-surface2 border border-border rounded-input p-4 text-center">
+                  <div className="font-display text-2xl font-bold gradient-text leading-none mb-1">
+                    {m.value}
+                  </div>
+                  <div className="text-xs text-text font-medium">{m.label}</div>
+                  <div className="font-mono text-[0.58rem] text-muted mt-1">{m.sub}</div>
+                </div>
+              ))}
+            </div>
+          )}
+          <p className="font-mono text-[0.6rem] text-muted mb-7">
+            // Sample figures — exact numbers to be confirmed by the client and dropped in
+          </p>
+
+          <div className="mb-7">
             <PipelineDiagram />
           </div>
 

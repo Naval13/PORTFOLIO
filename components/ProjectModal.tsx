@@ -48,6 +48,24 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
         <div className="p-6">
           <p className="text-sm text-muted leading-relaxed mb-6">{project.description}</p>
 
+          {project.metrics && (
+            <>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-2">
+                {project.metrics.map((m) => (
+                  <div key={m.label} className="bg-surface2 border border-border rounded-input p-3 text-center">
+                    <div className="font-display text-xl font-bold gradient-text leading-none mb-1">
+                      {m.value}
+                    </div>
+                    <div className="text-[0.7rem] text-text font-medium">{m.label}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="font-mono text-[0.58rem] text-muted mb-6">
+                // Sample figures — exact numbers to be confirmed by the client
+              </p>
+            </>
+          )}
+
           <h4 className="font-mono text-[0.65rem] uppercase tracking-wider text-muted mb-3">Highlights</h4>
           <ul className="space-y-1.5 mb-6">
             {project.highlights.map((h) => (

@@ -20,7 +20,7 @@ export default function Services() {
           For founders, product teams, and agencies who want AI and data as a real advantage.
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-4 mb-12">
+        <div className="grid sm:grid-cols-2 gap-4 mb-12 stagger">
           {services.map((s) => (
             <div key={s.number} className="relative bg-surface border border-border rounded-card p-6 overflow-hidden">
               <span className="absolute top-3 right-4 font-display text-6xl font-bold text-teal/5 leading-none">

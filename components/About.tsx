@@ -50,7 +50,7 @@ export default function About() {
               </p>
             ))}
 
-            <blockquote className="border-l-2 border-amber pl-4.5 my-4 font-display italic text-text text-[0.95rem] leading-relaxed">
+            <blockquote className="border-l-2 border-amber pl-[18px] my-4 font-display italic text-text text-[0.95rem] leading-relaxed">
               {bio.quote}
             </blockquote>
 
@@ -82,7 +82,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 stagger">
           {skillCategories.map((cat) => (
             <div key={cat.name} className="bg-surface2 border border-border rounded-input p-3.5">
               <div className="flex items-center gap-1.5 text-xs font-semibold mb-2">

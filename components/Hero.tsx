@@ -11,9 +11,14 @@ const nodes = [
   { cx: 850, cy: 150, ring: true },
 ];
 
+const item = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-24 pb-20 px-6 sm:px-8">
+    <section className="relative overflow-hidden px-6 sm:px-8 lg:px-12 min-h-[88vh] sm:min-h-[80vh] flex items-center">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -29,18 +34,8 @@ export default function Hero() {
         aria-hidden="true"
       >
         <g stroke="#00D4AA" strokeWidth="1" fill="none" opacity="0.6">
-          <motion.path
-            d="M0 150 Q200 130 400 170 T900 150"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.8, ease: "easeInOut" }}
-          />
-          <motion.path
-            d="M0 260 Q250 230 500 270 T900 250"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.8, ease: "easeInOut", delay: 0.3 }}
-          />
+          <path className="pipe-flow" d="M0 150 Q200 130 400 170 T900 150" />
+          <path className="pipe-flow" d="M0 260 Q250 230 500 270 T900 250" style={{ animationDelay: "0.6s" }} />
         </g>
         <g stroke="#F0A500" strokeWidth="0.5" fill="none" opacity="0.25">
           <line x1="120" y1="150" x2="300" y2="260" />
@@ -64,30 +59,47 @@ export default function Hero() {
         ))}
       </svg>
 
-      <div className="relative z-10 max-w-content mx-auto">
-        <div className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-wider text-teal mb-5">
+      <motion.div
+        className="relative z-10 max-w-6xl mx-auto w-full py-20"
+        initial="hidden"
+        animate="show"
+        transition={{ staggerChildren: 0.1, delayChildren: 0.1 }}
+      >
+        <motion.div
+          variants={item}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-wider text-teal mb-5"
+        >
           <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
           <span>Available for projects</span>
           <span className="text-muted">·</span>
           <span className="text-muted">AI &amp; Data Engineer · Melbourne, AU</span>
-        </div>
+        </motion.div>
 
-        <h1 className="font-display font-bold text-[clamp(2.4rem,6vw,4.5rem)] leading-[1.05] tracking-tight mb-5">
+        <motion.h1
+          variants={item}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="font-display font-bold text-[clamp(2.4rem,5.5vw,5rem)] leading-[1.05] tracking-tight mb-5 max-w-4xl"
+        >
           <span className="block">I turn complex data</span>
           <span className="block gradient-text">into decisions that</span>
           <span className="block">move businesses.</span>
-        </h1>
+        </motion.h1>
 
-        <p className="text-base text-muted max-w-xl leading-relaxed mb-8">
+        <motion.p
+          variants={item}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-base sm:text-lg text-muted max-w-2xl leading-relaxed mb-8"
+        >
           <strong className="text-amber">
             {tagline.line1} {tagline.line2}
           </strong>
           <br />
           Building AI automation, data pipelines, BI dashboards, and LLM integrations — for teams
           that want outcomes, not just outputs.
-        </p>
+        </motion.p>
 
-        <div className="flex gap-3.5 flex-wrap mb-12">
+        <motion.div variants={item} transition={{ duration: 0.6, ease: "easeOut" }} className="flex gap-3.5 flex-wrap mb-12">
           <a
             href="#work"
             className="px-7 py-3 rounded-input bg-amber text-bg font-display font-semibold text-sm hover:shadow-[0_8px_24px_rgba(240,165,0,0.3)] transition-shadow"
@@ -100,9 +112,9 @@ export default function Hero() {
           >
             Let&apos;s Talk
           </a>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div variants={item} transition={{ duration: 0.6, ease: "easeOut" }}>
           <div className="font-mono text-[0.6rem] uppercase tracking-widest text-muted mb-2">
             Experience with
           </div>
@@ -111,8 +123,8 @@ export default function Hero() {
               <span key={t}>{t}</span>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
