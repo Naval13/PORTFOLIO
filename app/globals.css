@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #1c2128;
+  --amber: #f0a500;
+  --teal: #00d4aa;
+  --purple: #7c6af7;
+  --red: #e85d75;
+  --green: #3dd68c;
+  --blue: #00b4d8;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --border: #21262d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--amber), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-pad {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media (max-width: 640px) {
+  .section-pad {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children reveal — used by grids (Work, Services, skills) so cards
+   cascade in one-by-one instead of the whole block fading as a single unit. */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 550ms cubic-bezier(0.4, 0, 0.2, 1), transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-up.is-visible .stagger > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stagger > *:nth-child(1) { transition-delay: 0ms; }
+.stagger > *:nth-child(2) { transition-delay: 70ms; }
+.stagger > *:nth-child(3) { transition-delay: 140ms; }
+.stagger > *:nth-child(4) { transition-delay: 210ms; }
+.stagger > *:nth-child(5) { transition-delay: 280ms; }
+.stagger > *:nth-child(6) { transition-delay: 350ms; }
+.stagger > *:nth-child(7) { transition-delay: 420ms; }
+.stagger > *:nth-child(8) { transition-delay: 490ms; }
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+.pipe-flow {
+  stroke-dasharray: 4 8;
+  animation: dash-flow 2.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fade-up,
+  .stagger > * {
+    opacity: 1;
+    transform: none;
+  }
+}
