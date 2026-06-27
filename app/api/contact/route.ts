@@ -17,7 +17,7 @@ export async function POST(req: Request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Naval Aggarwal Portfolio <onboarding@resend.dev>",
+      from: "Naval Aggarwal Portfolio <contact@navalaggarwal.com>",
       to: contact.email,
       reply_to: email,
       subject: `New enquiry from ${name}`,
