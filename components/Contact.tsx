@@ -13,8 +13,9 @@ export default function Contact() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const formEl = e.currentTarget;
     setStatus("loading");
-    const form = new FormData(e.currentTarget);
+    const form = new FormData(formEl);
     const payload = {
       name: form.get("name"),
       email: form.get("email"),
@@ -29,7 +30,7 @@ export default function Contact() {
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
-      e.currentTarget.reset();
+      formEl.reset();
     } catch {
       setStatus("error");
     }
