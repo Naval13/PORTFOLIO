@@ -59,11 +59,23 @@ export default function About() {
             </div>
             <p className="text-xs text-muted leading-relaxed mb-3">{bio.beyondTerminal}</p>
             <div className="grid grid-cols-3 gap-2">
-              {sketches.map((src) => (
-                <div key={src} className="aspect-square rounded-input overflow-hidden border border-border relative">
-                  <Image src={src} alt="Sketch by Naval Aggarwal" fill className="object-cover" sizes="200px" />
-                </div>
-              ))}
+              {sketches.map((src) => {
+                const isFullyVisible = src.endsWith("sketch-03.jpg");
+                return (
+                  <div
+                    key={src}
+                    className="aspect-square rounded-input overflow-hidden border border-border relative bg-surface2"
+                  >
+                    <Image
+                      src={src}
+                      alt="Sketch by Naval Aggarwal"
+                      fill
+                      className={isFullyVisible ? "object-contain" : "object-cover"}
+                      sizes="200px"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
 

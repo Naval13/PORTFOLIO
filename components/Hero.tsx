@@ -3,12 +3,26 @@
 import { motion } from "framer-motion";
 import { trustBar, tagline } from "@/lib/data";
 
+// Pisces constellation, traced from a real star chart: a hooked chain
+// descending to the knot (Alrescha), a long cord running east, ending in
+// the small closed loop of the Circlet (the western fish's body).
 const nodes = [
-  { cx: 120, cy: 150 },
-  { cx: 300, cy: 260 },
-  { cx: 500, cy: 170, ring: true },
-  { cx: 700, cy: 260 },
-  { cx: 850, cy: 150, ring: true },
+  { cx: 405, cy: 108 },
+  { cx: 387, cy: 146 },
+  { cx: 374, cy: 187 },
+  { cx: 360, cy: 222 },
+  { cx: 324, cy: 273, ring: true }, // Alrescha — the knot joining the two fish
+  { cx: 360, cy: 265 },
+  { cx: 405, cy: 257 },
+  { cx: 441, cy: 254 },
+  { cx: 482, cy: 250 },
+  { cx: 518, cy: 250 },
+  { cx: 549, cy: 254 },
+  { cx: 581, cy: 238 },
+  { cx: 617, cy: 233, ring: true }, // Circlet
+  { cx: 644, cy: 254 },
+  { cx: 621, cy: 289 },
+  { cx: 581, cy: 289 },
 ];
 
 const item = {
@@ -38,10 +52,22 @@ export default function Hero() {
           <path className="pipe-flow" d="M0 260 Q250 230 500 270 T900 250" style={{ animationDelay: "0.6s" }} />
         </g>
         <g stroke="#F0A500" strokeWidth="0.5" fill="none" opacity="0.25">
-          <line x1="120" y1="150" x2="300" y2="260" />
-          <line x1="300" y1="260" x2="500" y2="170" />
-          <line x1="500" y1="170" x2="700" y2="260" />
-          <line x1="700" y1="260" x2="850" y2="150" />
+          <line x1="405" y1="108" x2="387" y2="146" />
+          <line x1="387" y1="146" x2="374" y2="187" />
+          <line x1="374" y1="187" x2="360" y2="222" />
+          <line x1="360" y1="222" x2="324" y2="273" />
+          <line x1="324" y1="273" x2="360" y2="265" />
+          <line x1="360" y1="265" x2="405" y2="257" />
+          <line x1="405" y1="257" x2="441" y2="254" />
+          <line x1="441" y1="254" x2="482" y2="250" />
+          <line x1="482" y1="250" x2="518" y2="250" />
+          <line x1="518" y1="250" x2="549" y2="254" />
+          <line x1="549" y1="254" x2="581" y2="238" />
+          <line x1="581" y1="238" x2="617" y2="233" />
+          <line x1="617" y1="233" x2="644" y2="254" />
+          <line x1="644" y1="254" x2="621" y2="289" />
+          <line x1="621" y1="289" x2="581" y2="289" />
+          <line x1="581" y1="289" x2="549" y2="254" />
         </g>
         {nodes.map((n, i) => (
           <g key={i}>
