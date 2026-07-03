@@ -20,7 +20,7 @@ export type Project = {
   metrics?: Metric[];
 };
 
-export const filters = ["All", "AI/ML", "GenAI", "Data Engineering", "BI/Analytics"] as const;
+export const filters = ["All", "AI/ML", "GenAI", "BI/Analytics"] as const;
 
 export const projects: Project[] = [
   {
@@ -55,18 +55,18 @@ export const projects: Project[] = [
   {
     id: "stocks-ai",
     title: "Stocks AI Analyzer",
-    tags: ["GenAI", "ML", "Python", "FastAPI"],
+    tags: ["Agentic AI", "CrewAI", "GenAI", "Python"],
     category: ["AI/ML", "GenAI"],
-    outcome: "End-to-end AI investing tool with GPT-4 conversational interface",
+    outcome: "End-to-end agentic AI system for stock analysis and portfolio insights",
     emoji: "🤖",
     description:
-      "Built a comprehensive AI-powered stock analysis system combining LSTM neural networks, XGBoost, ARIMA forecasting, and NLP sentiment analysis. Integrated LangChain + GPT-4 for a conversational query interface. Deployed on Azure with a Streamlit dashboard.",
+      "A live, production agentic AI tool built entirely with CrewAI, orchestrating multiple specialised agents to analyse market data, evaluate portfolio positions, and surface actionable insights. Demonstrates end-to-end GenAI system design with real-world reliability.",
     highlights: [
-      "~10% forecasting accuracy improvement over ARIMA baseline",
-      "GPT-4 agent answers natural language stock questions",
-      "Automated daily data refresh with Azure hosting",
+      "Fully agentic architecture using CrewAI framework",
+      "Live in production, self-hosted, always running",
+      "Multi-agent orchestration for data gathering, analysis, and insight generation",
     ],
-    tech: ["Python", "LangChain", "GPT-4", "LSTM", "XGBoost", "FastAPI", "Streamlit", "Azure", "Docker"],
+    tech: ["CrewAI", "Python", "OpenAI", "Financial APIs", "LangChain"],
   },
   {
     id: "umac-hackathon",
@@ -83,70 +83,6 @@ export const projects: Project[] = [
       "Agentic AI + Power BI in a single integrated suite",
     ],
     tech: ["CrewAI", "LangChain", "Python", "Power BI", "DAX"],
-  },
-  {
-    id: "nab-grace",
-    title: "NAB GRACE Risk Pipeline",
-    tags: ["Data Engineering", "Airflow", "AWS"],
-    category: ["Data Engineering"],
-    outcome: "97% pipeline success rate · enterprise-scale ETL at NAB",
-    emoji: "🏦",
-    description:
-      "Built and managed end-to-end data pipelines for NAB's Governance Risk and Compliance Engine. Complex ETL integrating customer transaction data, with CI/CD via Jenkins and workflow scheduling via Apache Airflow on AWS.",
-    highlights: [
-      "97% pipeline success rate achieved",
-      "Full CI/CD with Git + Jenkins",
-      "PyTest coverage across all ETL stages",
-    ],
-    tech: ["Python", "Apache Airflow", "AWS", "SQL", "Java", "Jenkins", "PyTest"],
-  },
-  {
-    id: "enrollment-funnel",
-    title: "Monash Enrollment Funnel BI",
-    tags: ["Power BI", "ML", "DAX"],
-    category: ["BI/Analytics", "AI/ML"],
-    outcome: "50% less manual reporting · 5% enrollment yield improvement",
-    emoji: "📊",
-    description:
-      "Deep analysis of the student conversion funnel, uncovering a 12% drop-off at offer-to-acceptance. Built interactive Power BI dashboards enabling daily data-driven strategy. Logistic regression model achieving 85% accuracy on applicant scoring.",
-    highlights: [
-      "50% reduction in manual reporting time",
-      "5% enrollment yield improvement",
-      "85% accuracy on applicant acceptance prediction",
-    ],
-    tech: ["Power BI", "DAX", "Python", "scikit-learn", "SQL", "ARIMA"],
-  },
-  {
-    id: "flight-delays",
-    title: "Real-Time Flight Delay Predictor",
-    tags: ["Spark", "Kafka", "ML"],
-    category: ["Data Engineering", "AI/ML"],
-    outcome: "Real-time stream processing on large-scale aviation data",
-    emoji: "✈️",
-    description:
-      "Real-time streaming prediction for USA flight delays using Apache Kafka and Spark SQL/ML. Binary and multi-class classification using the MLlib/ML APIs on large-scale datasets.",
-    highlights: [
-      "Real-time streaming pipeline",
-      "Binary and multi-class classification",
-      "Full pipeline from ingestion to prediction",
-    ],
-    tech: ["Apache Spark", "Kafka", "PySpark", "MLlib", "Python"],
-  },
-  {
-    id: "covid-nlp",
-    title: "COVID-19 Twitter NLP Analysis",
-    tags: ["NLP", "BERT", "Python"],
-    category: ["AI/ML"],
-    outcome: "Sentiment analysis pipeline on a 1M+ tweet dataset",
-    emoji: "💬",
-    description:
-      "Pre-processed and analysed COVID-19 Twitter data using NLP in Python. BERT-based transformer models for sentiment, with a vectorisation pipeline for recommendation-system integration.",
-    highlights: [
-      "BERT transformer for sentiment analysis",
-      "Large-scale tweet vectorisation",
-      "Recommendation system integration",
-    ],
-    tech: ["Python", "NLTK", "BERT", "HuggingFace", "NumPy", "Pandas"],
   },
 ];
 
@@ -215,11 +151,19 @@ export const process = [
   { step: "04", title: "Deliver", desc: "Full handover with documentation" },
 ];
 
-export const stats = [
-  { value: 85, suffix: "%", label: "ML Model Accuracy", sub: "Enrollment predictor, Monash" },
-  { value: 50, suffix: "%", label: "Reporting Time Saved", sub: "Power BI automation" },
-  { value: 7, suffix: "%", label: "Conversion KPI Boost", sub: "UMAC hackathon 2024" },
-  { value: 1, suffix: "st", label: "Hackathon Place", sub: "Best Solution Award, UMAC MI 2024" },
+export type Stat = {
+  value: number;
+  suffix: string;
+  label: string;
+  sub: string;
+  staticDisplay?: string;
+};
+
+export const stats: Stat[] = [
+  { value: 100, suffix: "%", label: "Referral capture rate", sub: "Dietitian referral system" },
+  { value: 0, suffix: "", label: "KPI review included", sub: "Every engagement, no exception", staticDisplay: "30-day" },
+  { value: 9, suffix: "+ yrs", label: "Building data systems", sub: "Enterprise + startup + healthcare" },
+  { value: 0, suffix: "", label: "Best Solution Award", sub: "UMAC MI Hackathon 2024", staticDisplay: "1st 🏆" },
 ];
 
 export const timeline = [
@@ -268,9 +212,9 @@ export const bio = {
     "I'm not just interested in building the model. I want to know what decision it enables and whether that decision made things better.",
   ],
   quote:
-    "I believe data should tell stories, not just generate reports. My approach is always to understand the business first — then find the AI or data solution that fits. Not the other way around.",
+    "I believe partnerships are built on trust — and trust is built on doing what you said you'd do, then a little more. Every system I build is designed to keep working long after I step back. That's not a feature — that's my definition of a job well done.",
   beyondTerminal:
-    "When I'm not wrangling data pipelines, you'll find me sketching — my way of finding patterns before I model them.",
+    "Data drives what I build. But sketching is how I think. There's a connection between drawing patterns on paper and finding patterns in data — both are about learning to see clearly before you act. This is the part of me that clients say makes me a good partner: I bring a builder's craft to technical work.",
 };
 
 export const contact = {
@@ -279,6 +223,7 @@ export const contact = {
   linkedin: "https://www.linkedin.com/in/naval-aggarwal/",
   github: "https://github.com/Naval13/",
   medium: "https://medium.com/@naval.aggarwal2020/",
+  calLink: "naval-aggarwal/discovery-call",
 };
 
 export const trustBar = ["Monash University", "National Australia Bank", "Times Internet", "Infosys"];
@@ -287,3 +232,39 @@ export const tagline = {
   line1: "Data drives decisions…",
   line2: "Decisions drive results.",
 };
+
+export type Testimonial = {
+  id: string;
+  active: boolean;
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    id: "t1",
+    active: false,
+    quote: "[Placeholder — replace with real dietitian quote]",
+    author: "[Client name]",
+    role: "[Their role]",
+    company: "Melbourne healthcare practice",
+  },
+  {
+    id: "t2",
+    active: false,
+    quote: "[Placeholder — Monash colleague quote]",
+    author: "[Name]",
+    role: "[Role]",
+    company: "Monash University",
+  },
+  {
+    id: "t3",
+    active: false,
+    quote: "[Placeholder — third testimonial slot]",
+    author: "[Name]",
+    role: "[Role]",
+    company: "[Company]",
+  },
+];

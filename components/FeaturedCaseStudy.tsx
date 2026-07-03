@@ -31,7 +31,10 @@ export default function FeaturedCaseStudy() {
                 {featuredProject.industry}
               </div>
               <h3 className="font-display text-xl sm:text-2xl font-bold mb-2">{featuredProject.title}</h3>
-              <p className="text-amber text-sm font-medium">{featuredProject.outcome}</p>
+              <p className="text-amber text-sm font-medium mb-1">{featuredProject.outcome}</p>
+              <p className="text-xs text-muted italic">
+                A partnership I&apos;m proud of — client details anonymised, real outcomes verified.
+              </p>
             </div>
             <div className="flex gap-1.5 flex-wrap">
               {featuredProject.tags.map((t) => (

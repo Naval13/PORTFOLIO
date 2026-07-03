@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { bio, timeline, skillCategories } from "@/lib/data";
+import { bio, skillCategories, process as steps } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 
@@ -45,19 +45,19 @@ export default function About() {
             </div>
 
             {bio.paragraphs.map((p) => (
-              <p key={p} className="text-sm text-muted leading-relaxed mb-3.5">
+              <p key={p} className="text-sm text-muted leading-relaxed mb-3.5 text-justify">
                 {p}
               </p>
             ))}
 
-            <blockquote className="border-l-2 border-amber pl-[18px] my-4 font-display italic text-text text-[0.95rem] leading-relaxed">
+            <blockquote className="border-l-2 border-amber pl-[18px] my-4 font-display italic text-text text-[1.1rem] leading-relaxed">
               {bio.quote}
             </blockquote>
 
             <div className="font-mono text-[0.65rem] uppercase tracking-widest text-teal mt-6 mb-2.5">
               Beyond the Terminal
             </div>
-            <p className="text-xs text-muted leading-relaxed mb-3">{bio.beyondTerminal}</p>
+            <p className="text-xs text-muted leading-relaxed mb-3 text-justify">{bio.beyondTerminal}</p>
             <div className="grid grid-cols-3 gap-2">
               {sketches.map((src) => {
                 const isFullyVisible = src.endsWith("sketch-03.jpg");
@@ -80,16 +80,42 @@ export default function About() {
           </div>
 
           <div>
-            <div className="font-mono text-[0.65rem] uppercase tracking-widest text-teal mb-3">Journey</div>
-            <div className="relative pl-6 border-l border-border space-y-5">
-              {timeline.map((t, i) => (
-                <div key={i} className="relative">
+            <div className="font-mono text-[0.65rem] uppercase tracking-widest text-teal mb-4">
+              How I Work With Clients
+            </div>
+
+            <div className="relative pl-6 border-l border-border space-y-5 mb-8">
+              {steps.map((s) => (
+                <div key={s.step} className="relative">
                   <span className="absolute -left-[25px] top-1.5 w-2 h-2 rounded-full border border-teal bg-bg" />
-                  <div className="font-mono text-[0.65rem] text-teal mb-0.5">{t.year}</div>
-                  <div className="font-display text-sm font-semibold">{t.title}</div>
-                  <div className="text-xs text-muted">{t.sub}</div>
+                  <div className="font-mono text-[0.65rem] text-teal mb-0.5">{s.step}</div>
+                  <div className="font-display text-sm font-semibold">{s.title}</div>
+                  <div className="text-xs text-muted leading-relaxed">{s.desc}</div>
                 </div>
               ))}
+            </div>
+
+            <h3 className="font-display font-semibold text-[1.2rem] mb-4">
+              What partnership looks like with me
+            </h3>
+            <div className="space-y-3.5">
+              <p className="text-[0.9rem] text-muted leading-relaxed text-justify">
+                <strong className="text-text">I ask questions before I write code.</strong>{" "}
+                Most engineers reach for the tech stack in the first meeting. I ask about your
+                business, your team, and what &ldquo;successful&rdquo; actually looks like. Then
+                we build backwards from there.
+              </p>
+              <p className="text-[0.9rem] text-muted leading-relaxed text-justify">
+                <strong className="text-text">I stay accountable to outcomes.</strong>{" "}
+                Every engagement includes a 30-day performance review with a live KPI dashboard.
+                If something isn&apos;t working, we know within a month — not a year.
+              </p>
+              <p className="text-[0.9rem] text-muted leading-relaxed text-justify">
+                <strong className="text-text">I train your team to own what we build.</strong>{" "}
+                My goal isn&apos;t to make you dependent on me. It&apos;s to leave your team more
+                capable than when I arrived. Every project includes documentation, walkthroughs,
+                and knowledge transfer.
+              </p>
             </div>
           </div>
         </div>

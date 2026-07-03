@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import TestimonialStrip from "@/components/TestimonialStrip";
 import Stats from "@/components/Stats";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
 import Work from "@/components/Work";
@@ -14,6 +15,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <TestimonialStrip />
         <Stats />
         <FeaturedCaseStudy />
         <Work />

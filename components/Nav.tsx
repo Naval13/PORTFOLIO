@@ -11,6 +11,9 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
+const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK ?? "naval-aggarwal/discovery-call";
+const CAL_FALLBACK = `https://cal.com/${CAL_LINK}`;
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -43,10 +46,13 @@ export default function Nav() {
         </div>
 
         <a
-          href="#contact"
+          href={CAL_FALLBACK}
+          data-cal-namespace="discovery-call"
+          data-cal-link={CAL_LINK}
+          data-cal-config='{"layout":"month_view"}'
           className="hidden md:inline-block font-mono text-xs px-4 py-1.5 border border-teal rounded-input text-teal hover:bg-teal hover:text-bg transition-colors"
         >
-          Hire me
+          Book a Discovery Call
         </a>
 
         <button
@@ -71,11 +77,14 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={CAL_FALLBACK}
+            data-cal-namespace="discovery-call"
+            data-cal-link={CAL_LINK}
+            data-cal-config='{"layout":"month_view"}'
             onClick={() => setOpen(false)}
             className="font-mono text-xs px-4 py-2 border border-teal rounded-input text-teal text-center"
           >
-            Hire me
+            Book a Discovery Call
           </a>
         </div>
       )}

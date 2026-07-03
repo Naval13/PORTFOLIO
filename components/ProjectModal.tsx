@@ -83,7 +83,7 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
           )}
 
           <h4 className="font-mono text-[0.65rem] uppercase tracking-wider text-muted mb-3">Tech stack</h4>
-          <div className="flex gap-1.5 flex-wrap">
+          <div className="flex gap-1.5 flex-wrap mb-8">
             {project.tech.map((t) => (
               <span
                 key={t}
@@ -92,6 +92,22 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
                 {t}
               </span>
             ))}
+          </div>
+
+          <div className="border-t border-border pt-5">
+            <p className="text-xs text-muted italic mb-3">
+              Want to see how something like this could work in your business? Book a free
+              30-minute Discovery Call.
+            </p>
+            <a
+              href={`https://cal.com/${process.env.NEXT_PUBLIC_CAL_LINK ?? "naval-aggarwal/discovery-call"}`}
+              data-cal-namespace="discovery-call"
+              data-cal-link={process.env.NEXT_PUBLIC_CAL_LINK ?? "naval-aggarwal/discovery-call"}
+              data-cal-config='{"layout":"month_view"}'
+              className="inline-block font-mono text-xs px-4 py-2 border border-teal rounded-input text-teal hover:bg-teal hover:text-bg transition-colors"
+            >
+              Discuss a similar project →
+            </a>
           </div>
         </div>
       </div>

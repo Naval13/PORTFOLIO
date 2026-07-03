@@ -97,9 +97,9 @@ export default function Hero() {
           className="flex items-center justify-center gap-2.5 font-mono text-xs uppercase tracking-wider text-teal mb-5"
         >
           <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-          <span>Available for projects</span>
+          <span>Available for new partnerships</span>
           <span className="text-muted">·</span>
-          <span className="text-muted">AI &amp; Data Engineer · Melbourne, AU</span>
+          <span className="text-muted">AI &amp; Data Build Partner · Melbourne, AU</span>
         </motion.div>
 
         <motion.h1
@@ -112,10 +112,10 @@ export default function Hero() {
           <span className="block">move businesses.</span>
         </motion.h1>
 
-        <motion.p
+        <motion.div
           variants={item}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-base sm:text-lg text-muted max-w-2xl leading-relaxed mb-8"
+          className="text-base sm:text-lg text-muted max-w-2xl leading-relaxed mb-3"
         >
           <strong className="text-amber">
             {tagline.line1} {tagline.line2}
@@ -123,20 +123,31 @@ export default function Hero() {
           <br />
           Building AI automation, data pipelines, BI dashboards, and LLM integrations — for teams
           that want outcomes, not just outputs.
+        </motion.div>
+
+        <motion.p
+          variants={item}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-teal italic text-[0.85rem] mb-8"
+        >
+          Build together. Grow together.
         </motion.p>
 
         <motion.div variants={item} transition={{ duration: 0.6, ease: "easeOut" }} className="flex gap-3.5 flex-wrap justify-center mb-12">
           <a
-            href="#work"
+            href={`https://cal.com/${process.env.NEXT_PUBLIC_CAL_LINK ?? "naval-aggarwal/discovery-call"}`}
+            data-cal-namespace="discovery-call"
+            data-cal-link={process.env.NEXT_PUBLIC_CAL_LINK ?? "naval-aggarwal/discovery-call"}
+            data-cal-config='{"layout":"month_view"}'
             className="px-7 py-3 rounded-input bg-amber text-bg font-display font-semibold text-sm hover:shadow-[0_8px_24px_rgba(240,165,0,0.3)] transition-shadow"
           >
-            See My Work →
+            Book a Discovery Call →
           </a>
           <a
-            href="#contact"
+            href="#work"
             className="px-7 py-3 rounded-input border border-border text-text font-display text-sm hover:border-teal transition-colors"
           >
-            Let&apos;s Talk
+            See My Work →
           </a>
         </motion.div>
 
@@ -149,6 +160,9 @@ export default function Hero() {
               <span key={t}>{t}</span>
             ))}
           </div>
+          <p className="font-mono text-[0.68rem] text-muted mt-2">
+            // 9+ years across enterprise, university, and startup environments
+          </p>
         </motion.div>
       </motion.div>
     </section>

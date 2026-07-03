@@ -1,8 +1,15 @@
 "use client";
 
-import { services, process } from "@/lib/data";
+import { services } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
+
+const promise = [
+  { emoji: "🔍", title: "Discovery First", desc: "I understand your business before writing code." },
+  { emoji: "📊", title: "30-Day KPI Review", desc: "Live dashboard + monthly performance check-in." },
+  { emoji: "🎓", title: "Team Enablement", desc: "Your team owns what we build. Always." },
+  { emoji: "🔄", title: "Ongoing Support", desc: "Optional retainer for monitoring and enhancements." },
+];
 
 export default function Services() {
   const { ref, isVisible } = useScrollReveal<HTMLDivElement>();
@@ -10,6 +17,29 @@ export default function Services() {
   return (
     <section id="services" className="section-pad px-6 sm:px-8 bg-white/[0.015] border-y border-border">
       <div ref={ref} className={cn("max-w-content mx-auto fade-up", isVisible && "is-visible")}>
+
+        {/* Partnership Promise strip */}
+        <div className="mb-12 p-6 sm:p-8 rounded-card border border-teal/15 bg-teal/[0.04]">
+          <div className="font-mono text-[0.65rem] uppercase tracking-widest text-teal mb-1.5">
+            The Partnership Promise
+          </div>
+          <h3 className="font-display font-semibold text-[1.4rem] mb-6">
+            What every engagement includes
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {promise.map((p) => (
+              <div
+                key={p.title}
+                className="text-center p-4 rounded-input border border-border"
+              >
+                <div className="text-2xl mb-2">{p.emoji}</div>
+                <div className="font-display text-sm font-semibold mb-1">{p.title}</div>
+                <div className="text-xs text-muted leading-relaxed">{p.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="font-mono text-[0.65rem] uppercase tracking-widest text-teal mb-2.5">
           What I Offer
         </div>
@@ -48,15 +78,14 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {process.map((p) => (
-            <div key={p.step} className="flex flex-col gap-1">
-              <div className="font-mono text-xs text-teal">{p.step}</div>
-              <div className="font-display text-sm font-semibold">{p.title}</div>
-              <div className="text-xs text-muted leading-relaxed">{p.desc}</div>
-            </div>
-          ))}
-        </div>
+        <p className="text-sm text-muted italic text-center">
+          &ldquo;Every partnership is priced around your scope and outcomes. No fixed rates because no two
+          builds are the same.{" "}
+          <strong className="text-text not-italic">
+            Start with a free Discovery Call — I&apos;ll tell you honestly if we&apos;re a fit.
+          </strong>
+          &rdquo;
+        </p>
       </div>
     </section>
   );

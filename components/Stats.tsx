@@ -1,16 +1,15 @@
 "use client";
 
-import { stats } from "@/lib/data";
+import { stats, type Stat } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 
-function StatCard({ value, suffix, label, sub, isVisible }: (typeof stats)[number] & { isVisible: boolean }) {
-  const count = useCountUp(value, isVisible);
+function StatCard({ value, suffix, label, sub, staticDisplay, isVisible }: Stat & { isVisible: boolean }) {
+  const count = useCountUp(staticDisplay ? 0 : value, isVisible && !staticDisplay);
   return (
     <div className="bg-bg p-7 text-center">
       <div className="font-display text-[2.6rem] font-bold gradient-text leading-none">
-        {count}
-        {suffix}
+        {staticDisplay ?? `${count}${suffix}`}
       </div>
       <div className="text-sm text-text font-medium mt-1">{label}</div>
       <div className="font-mono text-[0.6rem] text-muted mt-1">{sub}</div>
