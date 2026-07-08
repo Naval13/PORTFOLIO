@@ -185,7 +185,7 @@ Update the stats section with these four:
 | **100%** | Referral capture rate | Dietitian referral system |
 | **30-day** | KPI review included | Every engagement, no exception |
 | **9+ yrs** | Building data systems | Enterprise + startup + healthcare |
-| **1st** | 🏆 Best Solution Award | UMAC MI Hackathon 2024 |
+| **1st** | 🏆 Best Solution Award | Hackathon 2024 |
 
 ### Implementation notes
 
@@ -227,7 +227,7 @@ The current project list is too long and mixes strong client work with academic/
   - "Multi-agent orchestration for data gathering, analysis, and insight generation"
 - Tech: CrewAI, Python, OpenAI, Financial APIs, LangChain
 
-**3. UMAC Hackathon — AI & BI Suite**
+**3. Hackathon — AI & BI Suite**
 - Tags: CrewAI · Power BI · Agentic AI
 - Category: AI/ML · BI/Analytics · GenAI
 - Emoji: 🏆
@@ -434,7 +434,7 @@ After all enhancements:
 - Every CTA that says "Book a Discovery Call" opens the Cal.com widget cleanly
 - The selectivity line ("I take on a limited number of new partnerships each quarter") appears above the Cal.com booking widget in Contact section
 - Stats reflect Build Partner positioning (client outcomes, accountability, depth)
-- Only 3 sharp projects are displayed — Dietitian (featured), Stocks Analyzer, UMAC Hackathon
+- Only 3 sharp projects are displayed — Dietitian (featured), Stocks Analyzer, Hackathon
 - The About section tells a personal + professional story that builds trust
 - The Services section shows what's included in every partnership before showing the tiers
 - The site still loads fast (Lighthouse >90) and mobile experience is unchanged

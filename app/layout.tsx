@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import CalInit from "@/components/CalInit";
+import { siteUrl, siteName } from "@/lib/seo";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -25,26 +26,33 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://navalaggarwal.com"),
+  metadataBase: new URL(siteUrl),
   title: "Naval Aggarwal · AI & Data Build Partner · Melbourne",
   description:
     "AI & Data Build Partner in Melbourne. I ship systems that solve real business problems and stay accountable to your KPIs. Book a free 30-minute Discovery Call.",
+  alternates: { canonical: siteUrl },
   openGraph: {
     title: "Naval Aggarwal · AI & Data Build Partner",
     description: "Data drives decisions… Decisions drive results. Book a free Discovery Call.",
-    url: "https://navalaggarwal.com",
-    siteName: "Naval Aggarwal",
+    url: siteUrl,
+    siteName,
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Naval Aggarwal · AI & Data Build Partner",
+    description: "Data drives decisions… Decisions drive results. Book a free Discovery Call.",
+    images: ["/og-image.png"],
+  },
 };
 
-const jsonLd = {
+const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Naval Aggarwal",
   jobTitle: "AI & Data Build Partner",
-  url: "https://navalaggarwal.com",
+  url: siteUrl,
   sameAs: [
     "https://www.linkedin.com/in/naval-aggarwal/",
     "https://github.com/Naval13/",
@@ -63,13 +71,24 @@ const jsonLd = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: siteUrl,
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className="font-body bg-bg text-text">

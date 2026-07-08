@@ -18,9 +18,8 @@ export type Project = {
   industry?: string;
   showDiagram?: boolean;
   metrics?: Metric[];
+  caseStudySlug?: string;
 };
-
-export const filters = ["All", "AI/ML", "GenAI", "BI/Analytics"] as const;
 
 export const projects: Project[] = [
   {
@@ -29,6 +28,7 @@ export const projects: Project[] = [
     tags: ["ETL Pipeline", "AI / LLM", "Looker Studio", "Google Sheets", "Healthcare"],
     category: ["AI/ML", "Data Engineering", "BI/Analytics"],
     featured: true,
+    caseStudySlug: "dietitian-referral-system",
     industry: "Healthcare · Private Practice",
     outcome: "Eliminated manual referral review · AI booking recommendations · live practice dashboard",
     emoji: "🏥",
@@ -70,23 +70,21 @@ export const projects: Project[] = [
   },
   {
     id: "umac-hackathon",
-    title: "UMAC Hackathon — AI & BI Suite",
+    title: "Hackathon — AI & BI Suite",
     tags: ["CrewAI", "Power BI", "Agentic AI"],
     category: ["AI/ML", "BI/Analytics", "GenAI"],
     outcome: "🏆 1st place · 7% overall KPI improvement demonstrated",
     emoji: "🏆",
     description:
-      "Co-led an award-winning hackathon project building two tools: an AI Students ROI model using Agentic AI (CrewAI) and a BI Impact Analyser in Power BI. Won the Best Solution Award at UMAC MI 2024.",
+      "Co-led an award-winning hackathon project building two tools: an AI Students ROI model using Agentic AI (CrewAI) and a BI Impact Analyser in Power BI. Won the Best Solution Award at MI 2024.",
     highlights: [
-      "Won Best Solution Award — UMAC MI 2024",
+      "Won Best Solution Award — MI 2024",
       "7% improvement in conversion KPIs",
       "Agentic AI + Power BI in a single integrated suite",
     ],
     tech: ["CrewAI", "LangChain", "Python", "Power BI", "DAX"],
   },
 ];
-
-export const featuredProject = projects.find((p) => p.featured)!;
 
 export type Service = {
   number: string;
@@ -163,7 +161,7 @@ export const stats: Stat[] = [
   { value: 100, suffix: "%", label: "Referral capture rate", sub: "Dietitian referral system" },
   { value: 0, suffix: "", label: "KPI review included", sub: "Every engagement, no exception", staticDisplay: "30-day" },
   { value: 9, suffix: "+ yrs", label: "Building data systems", sub: "Enterprise + startup + healthcare" },
-  { value: 0, suffix: "", label: "Best Solution Award", sub: "UMAC MI Hackathon 2024", staticDisplay: "1st 🏆" },
+  { value: 0, suffix: "", label: "Best Solution Award", sub: "Hackathon 2024", staticDisplay: "1st 🏆" },
 ];
 
 export const timeline = [
@@ -174,7 +172,7 @@ export const timeline = [
   { year: "2021", title: "Independent AI Developer", sub: "Personal projects, ongoing" },
   { year: "2022", title: "Data Consultant", sub: "National Australia Bank, via Infosys" },
   { year: "2022", title: "Data Consultant", sub: "Monash University — Marketing Intelligence, ongoing" },
-  { year: "2024", title: "🏆 Best Solution Award", sub: "UMAC MI Hackathon 2024" },
+  { year: "2024", title: "🏆 Best Solution Award", sub: "Hackathon 2024" },
   { year: "2024", title: "🏆 Never Stop Learning Award", sub: "Monash University" },
 ];
 

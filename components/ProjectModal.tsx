@@ -60,9 +60,7 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
                   </div>
                 ))}
               </div>
-              <p className="font-mono text-[0.58rem] text-muted mb-6">
-                // Sample figures — exact numbers to be confirmed by the client
-              </p>
+
             </>
           )}
 

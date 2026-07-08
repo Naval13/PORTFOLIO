@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +17,8 @@ const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK ?? "naval-aggarwal/discovery-c
 const CAL_FALLBACK = `https://cal.com/${CAL_LINK}`;
 
 export default function Nav() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -33,16 +37,26 @@ export default function Nav() {
       )}
     >
       <nav className="max-w-content mx-auto flex items-center justify-between h-[58px] px-6 sm:px-8">
-        <a href="#" className="font-display font-bold text-lg">
+        <Link href="/" className="font-display font-bold text-lg">
           NA<span className="text-amber">.</span>
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-7">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm text-muted hover:text-text transition-colors">
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            isHome ? (
+              <a key={l.href} href={l.href} className="text-sm text-muted hover:text-text transition-colors">
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.href}
+                href={`/${l.href}`}
+                className="text-sm text-muted hover:text-text transition-colors"
+              >
+                {l.label}
+              </Link>
+            )
+          )}
         </div>
 
         <a
@@ -66,16 +80,27 @@ export default function Nav() {
 
       {open && (
         <div className="md:hidden bg-bg border-b border-border px-6 pb-6 flex flex-col gap-4">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-sm text-muted hover:text-text transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            isHome ? (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="text-sm text-muted hover:text-text transition-colors"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.href}
+                href={`/${l.href}`}
+                onClick={() => setOpen(false)}
+                className="text-sm text-muted hover:text-text transition-colors"
+              >
+                {l.label}
+              </Link>
+            )
+          )}
           <a
             href={CAL_FALLBACK}
             data-cal-namespace="discovery-call"
